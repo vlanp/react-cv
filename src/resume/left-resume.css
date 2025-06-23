@@ -15,6 +15,12 @@
   gap: 10px;
 }
 
+.body-div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .personal-information-div,
 .social-div,
 .profile-div,
@@ -36,4 +42,39 @@
   flex-direction: row;
   align-items: center;
   white-space: pre-wrap;
+}
+
+@media (max-width: 1024px) {
+  .resume-left-section {
+    background-color: var(--container-color);
+  }
+
+  .body-div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .personal-information-div,
+  .social-div,
+  .profile-div,
+  .experience-div {
+    align-items: center;
+    width: 47%;
+    padding-left: var(--margin-2);
+    padding-right: var(--margin-2);
+    padding-bottom: var(--margin-2);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--container-color-alt);
+  }
+}
+
+@media (max-width: 640px) {
+  .personal-information-div,
+  .social-div,
+  .profile-div,
+  .experience-div {
+    width: 97%;
+  }
 }

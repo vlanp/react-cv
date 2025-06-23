@@ -29,3 +29,29 @@
 .round-children {
   width: 100%;
 }
+
+@media (max-width: 1024px) {
+  .round {
+    background-color: transparent;
+  }
+  .round-div {
+    justify-content: center;
+  }
+  .round-children {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .round-children {
+    width: 350px;
+  }
+}
+
+@media (max-width: 640px) {
+  .round-children {
+    width: 280px;
+  }
+}

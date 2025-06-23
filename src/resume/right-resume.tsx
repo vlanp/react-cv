@@ -67,14 +67,16 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
               </div>
             </div>
 
-            <b className="smaller-size-text light-color-text">
-              {dictionary.projects_desc1}
-            </b>
-            <ul className="smaller-size-text light-color-text list">
-              <li>{dictionary.projects_desc1_feature1}</li>
-              <li>{dictionary.projects_desc1_feature2}</li>
-              <li>{dictionary.projects_desc1_feature3}</li>
-            </ul>
+            <div className="list-div">
+              <b className="smaller-size-text light-color-text">
+                {dictionary.projects_desc1}
+              </b>
+              <ul className="smaller-size-text light-color-text list">
+                <li>{dictionary.projects_desc1_feature1}</li>
+                <li>{dictionary.projects_desc1_feature2}</li>
+                <li>{dictionary.projects_desc1_feature3}</li>
+              </ul>
+            </div>
           </RoundDiv>
 
           <RoundDiv>
@@ -108,22 +110,24 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
               </div>
             </div>
 
-            <b className="smaller-size-text light-color-text">
-              {dictionary.projects_desc2}
-            </b>
-            <ul className="smaller-size-text light-color-text list">
-              <li>{dictionary.projects_desc2_feature1}</li>
-              <li>{dictionary.projects_desc2_feature2}</li>
-            </ul>
-            <b className="smaller-size-text light-color-text">
-              {dictionary.projects_desc3}
-            </b>
-            <ul className="smaller-size-text light-color-text list">
-              <li>{dictionary.projects_desc3_feature1}</li>
-              <li>{dictionary.projects_desc3_feature2}</li>
-              <li>{dictionary.projects_desc3_feature3}</li>
-              <li>{dictionary.projects_desc3_feature4}</li>
-            </ul>
+            <div className="list-div">
+              <b className="smaller-size-text light-color-text">
+                {dictionary.projects_desc2}
+              </b>
+              <ul className="smaller-size-text light-color-text list">
+                <li>{dictionary.projects_desc2_feature1}</li>
+                <li>{dictionary.projects_desc2_feature2}</li>
+              </ul>
+              <b className="smaller-size-text light-color-text">
+                {dictionary.projects_desc3}
+              </b>
+              <ul className="smaller-size-text light-color-text list">
+                <li>{dictionary.projects_desc3_feature1}</li>
+                <li>{dictionary.projects_desc3_feature2}</li>
+                <li>{dictionary.projects_desc3_feature3}</li>
+                <li>{dictionary.projects_desc3_feature4}</li>
+              </ul>
+            </div>
           </RoundDiv>
 
           <RoundDiv>
@@ -169,16 +173,18 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
               </div>
             </div>
 
-            <b className="smaller-size-text light-color-text">
-              {dictionary.projects_desc4}
-            </b>
-            <ul className="smaller-size-text light-color-text list">
-              <li>{dictionary.projects_desc4_feature1}</li>
-              <li>{dictionary.projects_desc4_feature2}</li>
-              <li>{dictionary.projects_desc4_feature3}</li>
-              <li>{dictionary.projects_desc4_feature4}</li>
-              <li>{dictionary.projects_desc4_feature5}</li>
-            </ul>
+            <div className="list-div">
+              <b className="smaller-size-text light-color-text">
+                {dictionary.projects_desc4}
+              </b>
+              <ul className="smaller-size-text light-color-text list">
+                <li>{dictionary.projects_desc4_feature1}</li>
+                <li>{dictionary.projects_desc4_feature2}</li>
+                <li>{dictionary.projects_desc4_feature3}</li>
+                <li>{dictionary.projects_desc4_feature4}</li>
+                <li>{dictionary.projects_desc4_feature5}</li>
+              </ul>
+            </div>
           </RoundDiv>
         </div>
       </div>
@@ -203,10 +209,12 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
             </div>
           </div>
           <RoundDiv hideRound>
-            <ul className="smaller-size-text light-color-text list">
-              <li>{dictionary.other_skills_desc1}</li>
-              <li>{dictionary.other_skills_desc2}</li>
-            </ul>
+            <div className="list-div">
+              <ul className="smaller-size-text light-color-text list">
+                <li>{dictionary.other_skills_desc1}</li>
+                <li>{dictionary.other_skills_desc2}</li>
+              </ul>
+            </div>
           </RoundDiv>
         </div>
       </div>

@@ -3,8 +3,6 @@
 
 /* Variables */
 :root {
-  --header-height: 3rem;
-
   /* Colors */
   --title-color: #0b0a0a;
   --text-color: #403a3a;
@@ -12,6 +10,7 @@
   --container-color: #fafafa;
   --container-color-alt: #f0efef;
   --body-color: #fcfcfc;
+  --border-color: #e0e0e0;
 
   /* Typography */
   --body-font: "Poppins", sans-serif;
@@ -32,8 +31,4 @@
   --margin-1: 0.5rem;
   --margin-2: 1rem;
   --margin-3: 1.5rem;
-
-  /* Z Index */
-  --z-tooltip: 10;
-  --z-fixed: 100;
 }

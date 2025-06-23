@@ -7,14 +7,14 @@ html {
 }
 
 .main-container {
-  padding: 3rem;
+  padding: 2.5rem;
   display: flex;
   justify-content: center;
 }
 
 .resume-section {
-  width: 1024px;
-  height: 1448px;
+  width: calc(1024px - 2 * 3rem);
+  height: calc((1024px - 2 * 3rem) / 0.708);
   display: flex;
   flex-direction: row;
   box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
@@ -87,4 +87,15 @@ h3 {
 #download-button:hover {
   cursor: pointer;
   opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+  .resume-section {
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+  }
+  #download-button {
+    left: 49%;
+  }
 }

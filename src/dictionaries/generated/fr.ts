@@ -5,6 +5,7 @@ interface IFrDictionary {
   profession: string;
 research_1: string;
 research_2: string;
+about_section: string;
 age: string;
 address: string;
 social_section: string;
@@ -54,6 +55,7 @@ export const frDictionary: IFrDictionary = {
   profession: 'Développeur full stack',
   research_1: 'En recherche d\'une alternance',
   research_2: '(13-15 mois)',
+  about_section: 'À propos',
   age: ' ans',
   address: 'Rouen, France',
   social_section: 'Social',

@@ -5,6 +5,7 @@ interface IEnDictionary {
   profession: string;
 research_1: string;
 research_2: string;
+about_section: string;
 age: string;
 address: string;
 social_section: string;
@@ -54,6 +55,7 @@ export const enDictionary: IEnDictionary = {
   profession: 'Full stack developer',
   research_1: 'Looking for an apprenticeship',
   research_2: '(13-15 months)',
+  about_section: 'About',
   age: ' years old',
   address: 'Rouen, France',
   social_section: 'Social',

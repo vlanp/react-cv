@@ -52,3 +52,25 @@
 .techno-img-little-container {
   width: 60px;
 }
+
+@media (max-width: 1024px) {
+  h2 {
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
+  .education-div {
+    align-items: center;
+  }
+  .all_technos {
+    gap: 20px;
+    align-self: center;
+    justify-content: space-evenly;
+  }
+  .list-div {
+    width: fit-content;
+    align-self: center;
+    line-height: 1.1rem;
+  }
+}
