@@ -1,0 +1,39 @@
+.resume-left-section {
+  background-color: var(--container-color-alt);
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.header-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.personal-information-div,
+.social-div,
+.profile-div,
+.experience-div {
+  display: flex;
+  flex-direction: column;
+  align-items: "start";
+  gap: 10px;
+}
+
+.icon {
+  font-size: 1.2rem;
+  width: 25px;
+  margin-right: 0.75rem;
+}
+
+.text-with-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: pre-wrap;
+}

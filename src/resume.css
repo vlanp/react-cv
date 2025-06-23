@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-container {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.resume-section {
+  width: 1024px;
+  height: 1448px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
+  position: relative;
+}
+
+body {
+  font-family: var(--body-font);
+  font-weight: var(--font-medium);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  margin-bottom: var(--margin-2);
+  margin-top: 10px;
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+}
+
+.normal-size-text {
+  font-size: var(--normal-font-size);
+}
+
+.small-size-text {
+  font-size: var(--small-font-size);
+}
+
+.smaller-size-text {
+  font-size: var(--smaller-font-size);
+}
+
+.normal-color-text {
+  color: var(--text-color);
+}
+
+.light-color-text {
+  color: var(--text-color-light);
+}
+
+.hover:hover {
+  color: black;
+}
+
+.list {
+  padding: 0 1rem;
+  list-style: inherit;
+}
+
+#download-button {
+  position: absolute;
+  left: 16%;
+  top: 10px;
+}
+
+#download-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
