@@ -58,6 +58,8 @@ function Resume({ lang }: { lang: ILang }) {
         useCORS: true,
         width: currentWidth,
         height: currentHeight,
+        windowWidth: 1920,
+        windowHeight: 1080,
       },
       jsPDF: {
         format: "a4",
