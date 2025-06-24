@@ -1,5 +1,8 @@
 .resume-left-section {
-  background-color: var(--container-color-alt);
+  background-color: light-dark(
+    var(--light-container-color-alt),
+    var(--dark-container-color-alt)
+  );
   flex: 1;
   padding: 20px;
   display: flex;
@@ -46,7 +49,10 @@
 
 @media (max-width: 1024px) {
   .resume-left-section {
-    background-color: var(--container-color);
+    background-color: light-dark(
+      var(--light-container-color),
+      var(--dark-container-color)
+    );
   }
 
   .body-div {
@@ -66,7 +72,10 @@
     padding-bottom: var(--margin-2);
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    background-color: var(--container-color-alt);
+    background-color: light-dark(
+      var(--light-container-color-alt),
+      var(--dark-container-color-alt)
+    );
   }
 }
 

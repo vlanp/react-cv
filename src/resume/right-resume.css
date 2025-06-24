@@ -1,10 +1,13 @@
 .resume-right-section {
-  background-color: var(--container-color);
+  background-color: light-dark(
+    var(--light-container-color),
+    var(--dark-container-color)
+  );
   flex: 2;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
 .education-div {
@@ -32,8 +35,11 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
+  background-color: light-dark(var(--light-card-color), var(--dark-card-color));
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .techno-img-container,

@@ -54,7 +54,7 @@ other_skills_desc2: string;
 export const frDictionary: IFrDictionary = {
   profession: 'Développeur full stack',
   research_1: 'En recherche d\'une alternance',
-  research_2: '(13-15 mois)',
+  research_2: '(18 mois)',
   about_section: 'À propos',
   age: ' ans',
   address: 'Rouen, France',

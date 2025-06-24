@@ -48,7 +48,6 @@ function Resume({ lang }: { lang: ILang }) {
     const areaCV = document.getElementById("area-cv");
     if (!areaCV) return;
     const currentWidth = areaCV.offsetWidth;
-    const currentHeight = areaCV.offsetHeight;
     const opt = {
       margin: 0,
       filename: "myResumeCV-dark.pdf",
@@ -57,7 +56,7 @@ function Resume({ lang }: { lang: ILang }) {
         scale: 4,
         useCORS: true,
         width: currentWidth,
-        height: currentHeight,
+        height: currentWidth * (29.7 / 21),
         windowWidth: 1920,
         windowHeight: 1080,
       },
@@ -65,6 +64,7 @@ function Resume({ lang }: { lang: ILang }) {
         format: "a4",
         orientation: "portrait",
       },
+      pagebreak: { mode: "avoid-all" },
     };
     await html2pdf(areaCV, opt);
 

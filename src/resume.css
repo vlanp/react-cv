@@ -10,11 +10,15 @@ html {
   padding: 2.5rem;
   display: flex;
   justify-content: center;
+  background-color: light-dark(
+    var(--light-background-color),
+    var(--dark-background-color)
+  );
 }
 
 .resume-section {
   width: calc(1024px - 2 * 3rem);
-  height: calc((1024px - 2 * 3rem) / 0.708);
+  height: calc((1024px - 2 * 3rem) / 0.707);
   display: flex;
   flex-direction: row;
   box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
@@ -36,7 +40,7 @@ h2 {
   font-size: var(--h2-font-size);
   text-transform: uppercase;
   letter-spacing: 0.35rem;
-  margin-bottom: var(--margin-2);
+  margin-bottom: var(--margin-1);
   margin-top: 10px;
 }
 
@@ -47,7 +51,7 @@ h3 {
 h1,
 h2,
 h3 {
-  color: var(--title-color);
+  color: light-dark(var(--light-title-color), var(--dark-title-color));
 }
 
 .normal-size-text {
@@ -63,15 +67,18 @@ h3 {
 }
 
 .normal-color-text {
-  color: var(--text-color);
+  color: light-dark(var(--light-text-color), var(--dark-text-color));
 }
 
 .light-color-text {
-  color: var(--text-color-light);
+  color: light-dark(
+    var(--light-text-color-light),
+    var(--dark-text-color-light)
+  );
 }
 
 .hover:hover {
-  color: black;
+  color: light-dark(var(--light-basic-link), var(--dark-basic-link));
 }
 
 .list {

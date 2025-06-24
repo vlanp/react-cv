@@ -54,7 +54,7 @@ other_skills_desc2: string;
 export const enDictionary: IEnDictionary = {
   profession: 'Full stack developer',
   research_1: 'Looking for an apprenticeship',
-  research_2: '(13-15 months)',
+  research_2: '(18 months)',
   about_section: 'About',
   age: ' years old',
   address: 'Rouen, France',

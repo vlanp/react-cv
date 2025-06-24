@@ -3,14 +3,30 @@
 
 /* Variables */
 :root {
+  color-scheme: light dark;
+
   /* Colors */
-  --title-color: #0b0a0a;
-  --text-color: #403a3a;
-  --text-color-light: #707070;
-  --container-color: #fafafa;
-  --container-color-alt: #f0efef;
-  --body-color: #fcfcfc;
-  --border-color: #e0e0e0;
+  --light-background-color: oklch(1 0 0);
+  --light-title-color: #0b0a0a;
+  --light-text-color: #403a3a;
+  --light-text-color-light: #707070;
+  --light-container-color: #fafafa;
+  --light-container-color-alt: #f0efef;
+  --light-card-color: #fafafa;
+  --light-body-color: #fcfcfc;
+  --light-border-color: #e0e0e0;
+  --light-basic-link: black;
+
+  --dark-background-color: #0f0f0f;
+  --dark-title-color: #ffffff;
+  --dark-text-color: #e0e0e0;
+  --dark-text-color-light: #a0a0a0;
+  --dark-container-color: #2d2d2d;
+  --dark-container-color-alt: #242424;
+  --dark-card-color: #868585;
+  --dark-body-color: #1a1a1a;
+  --dark-border-color: #3a3a3a;
+  --dark-basic-link: oklch(0.76 0.125 235.5);
 
   /* Typography */
   --body-font: "Poppins", sans-serif;
