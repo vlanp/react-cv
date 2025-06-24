@@ -63,7 +63,7 @@ function Resume({ lang }: { lang: ILang }) {
     const currentWidth = areaCV.offsetWidth;
     const opt = {
       margin: 0,
-      filename: `CV-Valentin-GUILLAUME-${currentTheme}.pdf`,
+      filename: `CV-Valentin-GUILLAUME-${lang}-${currentTheme}.pdf`,
       image: { type: "jpeg", quality: 1 },
       html2canvas: {
         scale: 4,
@@ -77,7 +77,6 @@ function Resume({ lang }: { lang: ILang }) {
         format: "a4",
         orientation: "portrait",
       },
-      pagebreak: { mode: "avoid-all" },
     };
     await html2pdf(areaCV, opt);
 
@@ -111,7 +110,15 @@ function Resume({ lang }: { lang: ILang }) {
         (theme && Object.values(ETheme).includes(theme as ITheme) ? theme : "")
       }
     >
-      <section className="resume-section" id="area-cv">
+      <section
+        className={
+          "resume-section " +
+          (theme && Object.values(ETheme).includes(theme as ITheme)
+            ? theme
+            : "")
+        }
+        id="area-cv"
+      >
         <FaDownload
           id="download-button"
           title="Generate PDF"

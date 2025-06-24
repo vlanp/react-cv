@@ -6,7 +6,7 @@
   color-scheme: light dark;
 
   /* Colors */
-  --light-background-color: oklch(1 0 0);
+  --light-background-color: #ffffff;
   --light-title-color: #0b0a0a;
   --light-text-color: #403a3a;
   --light-text-color-light: #707070;
@@ -26,7 +26,7 @@
   --dark-card-color: #868585;
   --dark-body-color: #1a1a1a;
   --dark-border-color: #3a3a3a;
-  --dark-basic-link: oklch(0.76 0.125 235.5);
+  --dark-basic-link: #55bdf5;
 
   /* Typography */
   --body-font: "Poppins", sans-serif;
