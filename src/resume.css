@@ -40,8 +40,8 @@ h2 {
   font-size: var(--h2-font-size);
   text-transform: uppercase;
   letter-spacing: 0.35rem;
-  margin-bottom: var(--margin-1);
-  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 h3 {
