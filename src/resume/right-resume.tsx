@@ -22,7 +22,7 @@ import mongoDb from "../assets/pictures/devicon/MongoDB.png";
 import express from "../assets/pictures/devicon/express.png";
 import zustand from "../assets/pictures/devicon/zustand.png";
 import axios from "../assets/pictures/devicon/axios.png";
-import cloudinary from "../assets/pictures/devicon/cloudinary.png";
+import cloudinary from "../assets/pictures/devicon/Cloudinary.png";
 import northflank from "../assets/pictures/devicon/northflank.png";
 import nodeJs from "../assets/pictures/devicon/nodejs-logo.png";
 import html from "../assets/pictures/devicon/HTML5_logo_and_wordmark.svg.png";
