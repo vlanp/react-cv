@@ -23,8 +23,6 @@ function Resume({ lang }: { lang: ILang }) {
 
   const { theme } = useParams();
 
-  console.log(theme);
-
   const generatePdf = async () => {
     const styleSheets = Array.from(document.styleSheets);
     const deletedMediaRules: [CSSMediaRule, Record<number, string>][] = [];
@@ -53,10 +51,19 @@ function Resume({ lang }: { lang: ILang }) {
 
     const areaCV = document.getElementById("area-cv");
     if (!areaCV) return;
+    let currentTheme: ITheme = ETheme.LIGHT;
+    if (theme && Object.values(ETheme).includes(theme as ITheme)) {
+      currentTheme = theme as ITheme;
+    } else if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      currentTheme = ETheme.DARK;
+    }
     const currentWidth = areaCV.offsetWidth;
     const opt = {
       margin: 0,
-      filename: "myResumeCV-dark.pdf",
+      filename: `CV-Valentin-GUILLAUME-${currentTheme}.pdf`,
       image: { type: "jpeg", quality: 1 },
       html2canvas: {
         scale: 4,
