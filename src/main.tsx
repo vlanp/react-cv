@@ -12,8 +12,14 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route path={ELang.EN} element={<Resume lang={ELang.EN} />} />
-        <Route path={ELang.FR} element={<Resume lang={ELang.FR} />} />
+        <Route
+          path={ELang.EN + "/:theme?"}
+          element={<Resume lang={ELang.EN} />}
+        />
+        <Route
+          path={ELang.FR + "/:theme?"}
+          element={<Resume lang={ELang.FR} />}
+        />
       </Routes>
     </BrowserRouter>
   </StrictMode>

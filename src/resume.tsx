@@ -14,10 +14,16 @@ import LeftResume from "./resume/left-resume";
 import RightResume from "./resume/right-resume";
 import html2pdf from "html2pdf.js";
 import { FaDownload } from "react-icons/fa6";
+import { useParams } from "react-router";
+import { ETheme, type ITheme } from "./types/ITheme";
 
 function Resume({ lang }: { lang: ILang }) {
   const [dictionaryDataState, setDictionaryDataState] =
     useState<IFetchDataState<IDictionary>>(fetchDataIdle);
+
+  const { theme } = useParams();
+
+  console.log(theme);
 
   const generatePdf = async () => {
     const styleSheets = Array.from(document.styleSheets);
@@ -92,7 +98,12 @@ function Resume({ lang }: { lang: ILang }) {
   }
 
   return (
-    <main className="main-container">
+    <main
+      className={
+        "main-container " +
+        (theme && Object.values(ETheme).includes(theme as ITheme) ? theme : "")
+      }
+    >
       <section className="resume-section" id="area-cv">
         <FaDownload
           id="download-button"

@@ -90,6 +90,7 @@ h3 {
   position: absolute;
   left: 16%;
   top: 10px;
+  color: light-dark(var(--light-title-color), var(--dark-title-color));
 }
 
 #download-button:hover {

@@ -38,7 +38,9 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
         <h2>{dictionary.education_section}</h2>
         <div className="education-div">
           <h3>{dictionary.education_title}</h3>
-          <p className="small-size-text">{dictionary.education_school}</p>
+          <p className="small-size-text normal-color-text">
+            {dictionary.education_school}
+          </p>
           <p className="smaller-size-text normal-color-text">
             {dictionary.education_period}
           </p>

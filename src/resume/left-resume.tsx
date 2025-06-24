@@ -84,7 +84,7 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
         <div className="experience-div" id="experience">
           <h2>{dictionary.experience_section}</h2>
           <h3>{dictionary.experience_title}</h3>
-          <p>{dictionary.experience_company}</p>
+          <p className="normal-color-text">{dictionary.experience_company}</p>
           <span className="smaller-size-text light-color-text">
             <p>{dictionary.experience_skills}</p>
             <ul className="list">

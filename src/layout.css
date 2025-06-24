@@ -48,3 +48,12 @@
   --margin-2: 1rem;
   --margin-3: 1.5rem;
 }
+
+.light {
+  /* forces light color-scheme */
+  color-scheme: light;
+}
+.dark {
+  /* forces dark color-scheme */
+  color-scheme: dark;
+}
