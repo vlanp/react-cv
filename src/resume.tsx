@@ -12,11 +12,16 @@ import type { IDictionary } from "./dictionaries/generated";
 import AppSkeleton from "./resume-skeleton";
 import LeftResume from "./resume/left-resume";
 import RightResume from "./resume/right-resume";
-import html2pdf from "html2pdf.js";
 import { FaDownload } from "react-icons/fa6";
 import { useParams } from "react-router";
 import { ETheme, type ITheme } from "./types/ITheme";
+import html2pdf from "html2pdf.js";
 
+/* TODO : Resolve issue with links in PDF, which are in the wrong place.
+see : https://github.com/eKoopmans/html2pdf.js/issues/725
+and : https://github.com/eKoopmans/html2pdf.js/issues/155
+It is related to setting width in html2canvas options.
+Setting width and height is currently required to put the full A4 page in the PDF. */
 function Resume({ lang }: { lang: ILang }) {
   const [dictionaryDataState, setDictionaryDataState] =
     useState<IFetchDataState<IDictionary>>(fetchDataIdle);
@@ -65,6 +70,7 @@ function Resume({ lang }: { lang: ILang }) {
       margin: 0,
       filename: `CV-Valentin-GUILLAUME-${lang}-${currentTheme}.pdf`,
       image: { type: "jpeg", quality: 1 },
+      enableLinks: false,
       html2canvas: {
         scale: 4,
         useCORS: true,
@@ -77,7 +83,7 @@ function Resume({ lang }: { lang: ILang }) {
         format: "a4",
         orientation: "portrait",
       },
-    };
+    } as const;
     await html2pdf(areaCV, opt);
 
     deletedMediaRules.forEach((deletedMediaRule) => {
