@@ -5,6 +5,7 @@ import {
   FaGithub,
   FaLinkedin,
   FaHourglassStart,
+  FaLink,
 } from "react-icons/fa6";
 import type { IDictionary } from "../dictionaries/generated";
 import "./left-resume.css";
@@ -73,6 +74,14 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
           >
             <FaLinkedin className="icon" />
             bit.ly/3Bfq99B
+          </a>
+          <a
+            href="https://portfolio-v2-puce-ten.vercel.app/"
+            target="_blank"
+            className="small-size-text normal-color-text text-with-icon hover"
+          >
+            <FaLink className="icon" />
+            bit.ly/432CbOl
           </a>
         </div>
         <div className="profile-div" id="profile">
