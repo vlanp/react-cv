@@ -9,4 +9,4 @@ Ce projet est un CV entièrement responsive, réalisé avec React. Disponible en
 
 Le site est déployé sur [Netlify](https://www.netlify.com/) et est accessible [ici](https://generated-cv.netlify.app).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hYoLbEd4Hzc?si=DqbiVSA4jcnUrG-g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="aspect-video shadow-sm" src="https://www.youtube.com/embed/hYoLbEd4Hzc?si=DqbiVSA4jcnUrG-g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
