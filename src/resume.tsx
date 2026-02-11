@@ -72,7 +72,7 @@ function Resume({ lang }: { lang: ILang }) {
       image: { type: "jpeg", quality: 1 },
       enableLinks: false,
       html2canvas: {
-        scale: 4,
+        scale: 2,
         useCORS: true,
         width: currentWidth,
         height: currentWidth * (29.7 / 21),
