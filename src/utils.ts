@@ -9,4 +9,11 @@ function getAge(dateString: string) {
   return age;
 }
 
-export { getAge };
+const getBoolean = (booleanString: string) => {
+  if (booleanString !== "true" && booleanString !== "false") {
+    throw new Error(`${booleanString} is not a Boolean string`);
+  }
+  return booleanString === "true";
+};
+
+export { getAge, getBoolean };

@@ -2,7 +2,8 @@
 // Generated from fr.json
 
 interface IFrDictionary {
-  profession: string;
+  ResumeFields: string;
+profession: string;
 research_1: string;
 research_2: string;
 about_section: string;
@@ -52,6 +53,7 @@ other_skills_desc2: string;
 }
 
 export const frDictionary: IFrDictionary = {
+  ResumeFields: 'Champs du CV',
   profession: 'Développeur full stack',
   research_1: 'En recherche d\'une alternance',
   research_2: '(18 mois)',

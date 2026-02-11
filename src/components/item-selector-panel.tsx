@@ -6,8 +6,10 @@ import { FaSquareCaretDown } from "react-icons/fa6";
 import { FaSquareCaretUp } from "react-icons/fa6";
 
 const ItemSelectorPanel = ({
+  title,
   itemSelectorGroupsProps,
 }: {
+  title: string;
   itemSelectorGroupsProps: IItemSelectorGroup[];
 }) => {
   const [show, setShow] = useState<boolean>(false);
@@ -19,7 +21,7 @@ const ItemSelectorPanel = ({
   return (
     <>
       <div className={"item-selector-panel" + (show ? "" : " hide")}>
-        <h1 className="item-selector-panel-title">RiRi</h1>
+        <h1 className="item-selector-panel-title">{title}</h1>
         <div className="item-selector-groups">
           {itemSelectorGroupsProps.map((itemSelectorGroupProps) => (
             <ItemSelectorGroup

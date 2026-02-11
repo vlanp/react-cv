@@ -118,6 +118,7 @@ function Resume({ lang }: { lang: ILang }) {
       }
     >
       <ItemSelectorPanel
+        title={dictionaryDataState.data.ResumeFields}
         itemSelectorGroupsProps={[
           {
             title: dictionaryDataState.data.education_section,

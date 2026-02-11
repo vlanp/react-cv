@@ -2,7 +2,8 @@
 // Generated from en.json
 
 interface IEnDictionary {
-  profession: string;
+  ResumeFields: string;
+profession: string;
 research_1: string;
 research_2: string;
 about_section: string;
@@ -52,6 +53,7 @@ other_skills_desc2: string;
 }
 
 export const enDictionary: IEnDictionary = {
+  ResumeFields: 'Resume fields',
   profession: 'Full stack developer',
   research_1: 'Looking for an apprenticeship',
   research_2: '(18 months)',
