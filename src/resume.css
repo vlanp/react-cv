@@ -56,6 +56,10 @@ h3 {
   color: light-dark(var(--light-title-color), var(--dark-title-color));
 }
 
+.hide {
+  display: none;
+}
+
 .normal-size-text {
   font-size: var(--normal-font-size);
 }
@@ -87,6 +91,23 @@ h3 {
 .list {
   padding: 0 1rem;
   list-style: inherit;
+}
+
+.icon {
+  font-size: 1.2rem;
+  width: 25px;
+  margin-right: 0.75rem;
+}
+
+.large-icon {
+  font-size: 2rem;
+}
+
+.text-with-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: pre-wrap;
 }
 
 #download-button {

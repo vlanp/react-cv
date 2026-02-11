@@ -34,19 +34,6 @@
   gap: 10px;
 }
 
-.icon {
-  font-size: 1.2rem;
-  width: 25px;
-  margin-right: 0.75rem;
-}
-
-.text-with-icon {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  white-space: pre-wrap;
-}
-
 @media (max-width: 1024px) {
   .resume-left-section {
     background-color: light-dark(
