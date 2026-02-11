@@ -16,6 +16,7 @@ import { FaDownload } from "react-icons/fa6";
 import { useParams } from "react-router";
 import { ETheme, type ITheme } from "./types/ITheme";
 import html2pdf from "html2pdf.js";
+import ItemSelectorPanel from "./components/item-selector-panel";
 
 /* TODO : Resolve issue with links in PDF, which are in the wrong place.
 see : https://github.com/eKoopmans/html2pdf.js/issues/725
@@ -116,6 +117,20 @@ function Resume({ lang }: { lang: ILang }) {
         (theme && Object.values(ETheme).includes(theme as ITheme) ? theme : "")
       }
     >
+      <ItemSelectorPanel
+        itemSelectorGroupsProps={[
+          {
+            title: dictionaryDataState.data.education_section,
+            items: ["toto", "tata", "loool"],
+          },
+          {
+            title: dictionaryDataState.data.projects_section,
+            items: ["toto", "tata"],
+          },
+          { title: "title1", items: ["toto", "tata"] },
+          { title: "title1", items: ["toto", "tata"] },
+        ]}
+      />
       <section
         className={
           "resume-section " +

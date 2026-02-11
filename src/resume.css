@@ -7,9 +7,11 @@ html {
 }
 
 .main-container {
-  padding: 2.5rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 2.5rem;
   background-color: light-dark(
     var(--light-background-color),
     var(--dark-background-color)
@@ -79,6 +81,7 @@ h3 {
 
 .hover:hover {
   color: light-dark(var(--light-basic-link), var(--dark-basic-link));
+  cursor: pointer;
 }
 
 .list {

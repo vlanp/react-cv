@@ -1,0 +1,27 @@
+.item-selector-group {
+  background-color: light-dark(
+    var(--light-container-color),
+    var(--dark-container-color)
+  );
+  width: 25%;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
+}
+
+.item-selector-group-title {
+  justify-self: center;
+  text-align: center;
+}
+
+@media (max-width: 1280px) {
+  .item-selector-group {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .item-selector-group {
+    width: 100%;
+  }
+}
