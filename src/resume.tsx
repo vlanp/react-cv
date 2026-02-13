@@ -8,7 +8,7 @@ import {
   FetchDataSuccess,
   type IFetchDataState,
 } from "./types/IFetchDataState";
-import type { IDictionary } from "./dictionaries/generated";
+import { dictionariesKeys, type IDictionary } from "./dictionaries/generated";
 import AppSkeleton from "./resume-skeleton";
 import LeftResume from "./resume/left-resume";
 import RightResume from "./resume/right-resume";
@@ -17,6 +17,10 @@ import { useParams } from "react-router";
 import { ETheme, type ITheme } from "./types/ITheme";
 import html2pdf from "html2pdf.js";
 import ItemSelectorPanel from "./components/item-selector-panel";
+import {
+  availablesGroupsTitles,
+  isAvailableGroupItem,
+} from "./zustand/useItemsStore";
 
 /* TODO : Resolve issue with links in PDF, which are in the wrong place.
 see : https://github.com/eKoopmans/html2pdf.js/issues/725
@@ -119,18 +123,17 @@ function Resume({ lang }: { lang: ILang }) {
     >
       <ItemSelectorPanel
         title={dictionaryDataState.data.ResumeFields}
-        itemSelectorGroupsProps={[
-          {
-            title: dictionaryDataState.data.education_section,
-            items: ["toto", "tata", "loool"],
-          },
-          {
-            title: dictionaryDataState.data.projects_section,
-            items: ["toto", "tata"],
-          },
-          { title: "title1", items: ["toto", "tata"] },
-          { title: "title1", items: ["toto", "tata"] },
-        ]}
+        itemSelectorGroupsProps={availablesGroupsTitles.map(
+          (availableGroupTitle) => ({
+            title: availableGroupTitle,
+            items: dictionariesKeys
+              .filter((key) => isAvailableGroupItem(key, availableGroupTitle))
+              .map((key) => ({
+                itemKey: key,
+                itemValue: dictionaryDataState.data[key],
+              })),
+          }),
+        )}
       />
       <section
         className={

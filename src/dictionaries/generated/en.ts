@@ -22,9 +22,15 @@ experience_skill2: string;
 experience_skill3: string;
 experience_skill4: string;
 education_section: string;
-education_title: string;
-education_school: string;
-education_period: string;
+education1_title: string;
+education1_school: string;
+education1_period: string;
+education2_title: string;
+education2_school: string;
+education2_period: string;
+education3_title: string;
+education3_school: string;
+education3_period: string;
 projects_section: string;
 projects_title1: string;
 projects_desc1: string;
@@ -73,9 +79,15 @@ export const enDictionary: IEnDictionary = {
   experience_skill3: 'Create Power BI desktop reports and deploy them on the web service',
   experience_skill4: 'Conduct statistical studies (expert in uncertainty calculations)',
   education_section: 'Education',
-  education_title: 'Web and mobile developer bootcamp',
-  education_school: 'Le Reacteur - Paris, France (remote)',
-  education_period: 'May 2024 - July 2024 (10 weeks)',
+  education1_title: 'DUT Physical Measurements',
+  education1_school: 'IUT of Rouen',
+  education1_period: 'September 2015 - June 2017',
+  education2_title: 'Professional bachelor\'s degree in metrology',
+  education2_school: 'IUT of Evreux',
+  education2_period: 'September 2017 - July 2018',
+  education3_title: 'Web and mobile developer bootcamp',
+  education3_school: 'Le Reacteur - Paris, France (remote)',
+  education3_period: 'May 2024 - July 2024 (10 weeks)',
   projects_section: 'Personal projects',
   projects_title1: 'Interactive map powered by OpenStreetMap data',
   projects_desc1: 'Android application that allows to:',

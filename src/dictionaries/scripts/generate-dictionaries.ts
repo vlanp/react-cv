@@ -51,7 +51,7 @@ function processObject(obj: object): { code: string; types: string } {
   const processValue = (
     value: unknown,
     key: string,
-    indent: string = ""
+    indent: string = "",
   ): { code: string; type: string } => {
     const formattedKey = formatKey(key);
 
@@ -162,24 +162,30 @@ function generateAllDictionaries(): void {
 ${locales
   .map(
     (locale) =>
-      `import type { I${
+      `import { ${locale}Dictionary, type I${
         locale.charAt(0).toUpperCase() + locale.slice(1)
-      }Dictionary } from './${locale}';`
+      }Dictionary } from './${locale}';`,
   )
   .join("\n")}
 
 export type IDictionary = ${locales
     .map(
       (locale) =>
-        `I${locale.charAt(0).toUpperCase() + locale.slice(1)}Dictionary`
+        `I${locale.charAt(0).toUpperCase() + locale.slice(1)}Dictionary`,
     )
     .join(" | ")};
+
+export const dictionariesKeys = [
+  ...new Set([${locales.flatMap(
+    (locale) => `...Object.keys(${locale}Dictionary)`,
+  )}])
+  ] as (keyof IDictionary)[];
 `;
 
   writeFileSync(
     resolve(__dirname, "../generated/index.ts"),
     indexContent,
-    "utf8"
+    "utf8",
   );
   console.log("✅ Generated index.ts");
 }

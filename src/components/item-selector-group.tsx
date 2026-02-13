@@ -1,11 +1,12 @@
 import type { IItemSelectorGroup } from "../types/IItemSelectorGroup";
+import type { IAvailableGroupTitle } from "../zustand/useItemsStore";
 import ItemSelector from "./item-selector";
 import "./item-selector-group.css";
 
-const ItemSelectorGroup = ({
+const ItemSelectorGroup = <T extends IAvailableGroupTitle>({
   itemSelectorGroupProps,
 }: {
-  itemSelectorGroupProps: IItemSelectorGroup;
+  itemSelectorGroupProps: IItemSelectorGroup<T>;
 }) => {
   return (
     <div className="item-selector-group">
@@ -13,7 +14,7 @@ const ItemSelectorGroup = ({
         {itemSelectorGroupProps.title}
       </h2>
       {itemSelectorGroupProps.items.map((item) => (
-        <ItemSelector itemName={item} />
+        <ItemSelector item={item} />
       ))}
     </div>
   );

@@ -1,40 +1,32 @@
-import { useEffect, useState } from "react";
 import "./item-selector.css";
 import { FaRegSquare } from "react-icons/fa6";
 import { FaRegSquareCheck } from "react-icons/fa6";
-import { getBoolean } from "../utils";
+import {
+  useItemsStore,
+  type IAvailableGroupTitle,
+} from "../zustand/useItemsStore";
+import type { IItem } from "../types/IItemSelectorGroup";
 
-const ItemSelector = ({ itemName }: { itemName: string }) => {
-  const [checkState, setCheckState] = useState<boolean>(false);
+const ItemSelector = ({ item }: { item: IItem<IAvailableGroupTitle> }) => {
+  const isSelected = useItemsStore((state) => state.itemsStates[item.itemKey]);
+  const setIsSelected = useItemsStore((state) => state.setItemState);
 
   const handleClick = () => {
-    localStorage.setItem(itemName, String(!checkState));
-    setCheckState((pv) => !pv);
+    localStorage.setItem(item.itemKey, String(!isSelected));
+    setIsSelected(item.itemKey, !isSelected);
   };
-
-  useEffect(() => {
-    const itemValue = localStorage.getItem(itemName);
-    try {
-      if (itemValue) {
-        const storedCheckState = getBoolean(itemValue);
-        setCheckState(storedCheckState);
-      }
-    } catch {
-      setCheckState(false);
-    }
-  }, [itemName]);
 
   return (
     <div
       className="item-selector small-size-text normal-color-text text-with-icon hover"
       onClick={handleClick}
     >
-      {checkState ? (
+      {isSelected ? (
         <FaRegSquareCheck className="icon" />
       ) : (
         <FaRegSquare className="icon" />
       )}
-      <span>{itemName}</span>
+      <span>{item.itemValue}</span>
     </div>
   );
 };

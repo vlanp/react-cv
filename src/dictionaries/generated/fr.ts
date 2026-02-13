@@ -22,9 +22,15 @@ experience_skill2: string;
 experience_skill3: string;
 experience_skill4: string;
 education_section: string;
-education_title: string;
-education_school: string;
-education_period: string;
+education1_title: string;
+education1_school: string;
+education1_period: string;
+education2_title: string;
+education2_school: string;
+education2_period: string;
+education3_title: string;
+education3_school: string;
+education3_period: string;
 projects_section: string;
 projects_title1: string;
 projects_desc1: string;
@@ -73,9 +79,15 @@ export const frDictionary: IFrDictionary = {
   experience_skill3: 'Créer des rapports Power BI desktop et les déployer sur le service web',
   experience_skill4: 'Faire des études statistiques (référent en calculs d\'incertitudes)',
   education_section: 'Formation',
-  education_title: 'Bootcamp développeur web et mobile',
-  education_school: 'Le Reacteur - Paris, France (en distanciel)',
-  education_period: 'Mai 2024 - Juillet 2024 (10 semaines)',
+  education1_title: 'DUT Mesures Physiques',
+  education1_school: 'IUT de Rouen',
+  education1_period: 'Septembre 2015 - Juin 2017',
+  education2_title: 'Licence professionnelle de métrologie',
+  education2_school: 'IUT d\'Evreux',
+  education2_period: 'Septembre 2017 - Juillet 2018',
+  education3_title: 'Bootcamp développeur web et mobile',
+  education3_school: 'Le Reacteur - Paris, France (en distanciel)',
+  education3_period: 'Mai 2024 - Juillet 2024 (10 semaines)',
   projects_section: 'Projets personnels',
   projects_title1: 'Carte interactive alimentée par les données d\'OpenStreetMap',
   projects_desc1: 'Application Android permettant de :',
