@@ -4,14 +4,14 @@ import ItemSelectorGroup from "./item-selector-group";
 import "./item-selector-panel.css";
 import { FaSquareCaretDown } from "react-icons/fa6";
 import { FaSquareCaretUp } from "react-icons/fa6";
-import type { IAvailableGroupTitle } from "../zustand/useItemsStore";
+import type { IAvailableSectionCategory } from "../zustand/useItemsStore";
 
-const ItemSelectorPanel = <T extends IAvailableGroupTitle>({
+const ItemSelectorPanel = <T extends IAvailableSectionCategory>({
   title,
-  itemSelectorGroupsProps,
+  itemSelectorGroups,
 }: {
   title: string;
-  itemSelectorGroupsProps: IItemSelectorGroup<T>[];
+  itemSelectorGroups: IItemSelectorGroup<T>[];
 }) => {
   const [show, setShow] = useState<boolean>(false);
 
@@ -24,10 +24,8 @@ const ItemSelectorPanel = <T extends IAvailableGroupTitle>({
       <div className={"item-selector-panel" + (show ? "" : " hide")}>
         <h1 className="item-selector-panel-title">{title}</h1>
         <div className="item-selector-groups">
-          {itemSelectorGroupsProps.map((itemSelectorGroupProps) => (
-            <ItemSelectorGroup
-              itemSelectorGroupProps={itemSelectorGroupProps}
-            />
+          {itemSelectorGroups.map((itemSelectorGroup) => (
+            <ItemSelectorGroup itemSelectorGroup={itemSelectorGroup} />
           ))}
         </div>
       </div>

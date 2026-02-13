@@ -1,17 +1,17 @@
 import type {
-  IAvailableGroupTitle,
-  IGroupItem,
-  IGroupItemValue,
+  IAvailableSectionCategory,
+  ISectionItemTitleKey,
+  ISectionItemTitleValue,
 } from "../zustand/useItemsStore";
 
-interface IItem<T extends IAvailableGroupTitle> {
-  itemKey: IGroupItem<T>;
-  itemValue: IGroupItemValue<T>;
+interface IItemTitle<T extends IAvailableSectionCategory> {
+  itemTitleKey: ISectionItemTitleKey<T>;
+  itemTitleValue: ISectionItemTitleValue<T>;
 }
 
-interface IItemSelectorGroup<T extends IAvailableGroupTitle> {
-  title: T;
-  items: IItem<T>[];
+interface IItemSelectorGroup<T extends IAvailableSectionCategory> {
+  category: T;
+  itemsTitles: IItemTitle<T>[];
 }
 
-export type { IItemSelectorGroup, IItem };
+export type { IItemSelectorGroup, IItemTitle };

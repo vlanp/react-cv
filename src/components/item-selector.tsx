@@ -3,17 +3,23 @@ import { FaRegSquare } from "react-icons/fa6";
 import { FaRegSquareCheck } from "react-icons/fa6";
 import {
   useItemsStore,
-  type IAvailableGroupTitle,
+  type IAvailableSectionCategory,
 } from "../zustand/useItemsStore";
-import type { IItem } from "../types/IItemSelectorGroup";
+import type { IItemTitle } from "../types/IItemSelectorGroup";
 
-const ItemSelector = ({ item }: { item: IItem<IAvailableGroupTitle> }) => {
-  const isSelected = useItemsStore((state) => state.itemsStates[item.itemKey]);
+const ItemSelector = ({
+  itemTitle,
+}: {
+  itemTitle: IItemTitle<IAvailableSectionCategory>;
+}) => {
+  const isSelected = useItemsStore(
+    (state) => state.itemsStates[itemTitle.itemTitleKey],
+  );
   const setIsSelected = useItemsStore((state) => state.setItemState);
 
   const handleClick = () => {
-    localStorage.setItem(item.itemKey, String(!isSelected));
-    setIsSelected(item.itemKey, !isSelected);
+    localStorage.setItem(itemTitle.itemTitleKey, String(!isSelected));
+    setIsSelected(itemTitle.itemTitleKey, !isSelected);
   };
 
   return (
@@ -26,7 +32,7 @@ const ItemSelector = ({ item }: { item: IItem<IAvailableGroupTitle> }) => {
       ) : (
         <FaRegSquare className="icon" />
       )}
-      <span className="item-selector-item">{item.itemValue}</span>
+      <span className="item-selector-item">{itemTitle.itemTitleValue}</span>
     </div>
   );
 };

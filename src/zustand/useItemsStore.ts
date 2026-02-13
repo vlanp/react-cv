@@ -2,59 +2,60 @@ import { dictionariesKeys, type IDictionary } from "../dictionaries/generated";
 import { create } from "zustand";
 import { getBoolean } from "../utils";
 
-type IGroup = Extract<keyof IDictionary, `${string}_section`>;
+type ISectionKey = Extract<keyof IDictionary, `${string}_section`>;
 
-type IGroupTitle = IGroup extends `${infer GroupTitle}_section`
-  ? GroupTitle
+type ISectionCategory = ISectionKey extends `${infer SectionCategory}_section`
+  ? SectionCategory
   : never;
 
-const availablesGroupsTitles = [
+const availablesSectionsCategories = [
   "education",
   "experience",
   "projects",
   "social",
-] satisfies IGroupTitle[];
+] satisfies ISectionCategory[];
 
-type IAvailableGroupTitle = (typeof availablesGroupsTitles)[number];
+type IAvailableSectionCategory = (typeof availablesSectionsCategories)[number];
 
-type IGroupItem<T extends IGroupTitle> = Extract<
+type ISectionItemTitleKey<T extends ISectionCategory> = Extract<
   keyof IDictionary,
   `${T}${number}_title`
 >;
 
-type IGroupItemValue<T extends IGroupTitle> = IDictionary[IGroupItem<T>];
+type ISectionItemTitleValue<T extends ISectionCategory> =
+  IDictionary[ISectionItemTitleKey<T>];
 
-function isAvailableGroupItem(
+function isAvailableSectionItemTitleKey(
   key: keyof IDictionary,
-  title?: IAvailableGroupTitle,
-): key is IGroupItem<IAvailableGroupTitle> {
+  title?: IAvailableSectionCategory,
+): key is ISectionItemTitleKey<IAvailableSectionCategory> {
   if (title) {
     return new RegExp(`^${title}\\d+_title`).test(key);
   }
-  return availablesGroupsTitles.some((title) =>
+  return availablesSectionsCategories.some((title) =>
     new RegExp(`^${title}\\d+_title`).test(key),
   );
 }
 
-const availablesGroupsItems = dictionariesKeys.filter((key) =>
-  isAvailableGroupItem(key),
+const availablesSectionsItemsTitlesKeys = dictionariesKeys.filter((key) =>
+  isAvailableSectionItemTitleKey(key),
 );
 
 interface IItemsStoreStates {
-  itemsStates: Record<IGroupItem<IAvailableGroupTitle>, boolean>;
+  itemsStates: Record<ISectionItemTitleKey<IAvailableSectionCategory>, boolean>;
 }
 
 interface IItemsStoreActions {
   setItemState: (
-    item: IGroupItem<IAvailableGroupTitle>,
+    item: ISectionItemTitleKey<IAvailableSectionCategory>,
     isSelected: boolean,
   ) => void;
 }
 
 const setItemState = (
-  item: IGroupItem<IAvailableGroupTitle>,
+  item: ISectionItemTitleKey<IAvailableSectionCategory>,
   isSelected: boolean,
-  itemsStates: Record<IGroupItem<IAvailableGroupTitle>, boolean>,
+  itemsStates: Record<ISectionItemTitleKey<IAvailableSectionCategory>, boolean>,
 ) => {
   return {
     ...itemsStates,
@@ -62,11 +63,11 @@ const setItemState = (
   };
 };
 
-const getItemState = (itemName: string) => {
-  const itemValue = localStorage.getItem(itemName);
+const getItemState = (itemTitleKey: string) => {
+  const itemTitleValue = localStorage.getItem(itemTitleKey);
   try {
-    if (itemValue) {
-      const storedCheckState = getBoolean(itemValue);
+    if (itemTitleValue) {
+      const storedCheckState = getBoolean(itemTitleValue);
       return storedCheckState;
     }
     return false;
@@ -76,24 +77,31 @@ const getItemState = (itemName: string) => {
 };
 
 const useItemsStore = create<IItemsStoreStates & IItemsStoreActions>((set) => ({
-  itemsStates: availablesGroupsItems.reduce(
+  itemsStates: availablesSectionsItemsTitlesKeys.reduce(
     (acc, key) => {
       acc[key] = getItemState(key);
       return acc;
     },
-    {} as Record<IGroupItem<IAvailableGroupTitle>, boolean>,
+    {} as Record<ISectionItemTitleKey<IAvailableSectionCategory>, boolean>,
   ),
-  setItemState: (item: IGroupItem<IAvailableGroupTitle>, isSelected: boolean) =>
+  setItemState: (
+    item: ISectionItemTitleKey<IAvailableSectionCategory>,
+    isSelected: boolean,
+  ) =>
     set((state) => ({
       itemsStates: setItemState(item, isSelected, state.itemsStates),
     })),
 }));
 
 export type {
-  IGroup,
-  IGroupTitle,
-  IGroupItem,
-  IAvailableGroupTitle,
-  IGroupItemValue,
+  ISectionKey,
+  ISectionCategory,
+  ISectionItemTitleKey,
+  IAvailableSectionCategory,
+  ISectionItemTitleValue,
 };
-export { availablesGroupsTitles, useItemsStore, isAvailableGroupItem };
+export {
+  availablesSectionsCategories,
+  useItemsStore,
+  isAvailableSectionItemTitleKey,
+};

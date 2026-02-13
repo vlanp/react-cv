@@ -18,8 +18,8 @@ import { ETheme, type ITheme } from "./types/ITheme";
 import html2pdf from "html2pdf.js";
 import ItemSelectorPanel from "./components/item-selector-panel";
 import {
-  availablesGroupsTitles,
-  isAvailableGroupItem,
+  availablesSectionsCategories,
+  isAvailableSectionItemTitleKey,
 } from "./zustand/useItemsStore";
 
 /* TODO : Resolve issue with links in PDF, which are in the wrong place.
@@ -123,14 +123,16 @@ function Resume({ lang }: { lang: ILang }) {
     >
       <ItemSelectorPanel
         title={dictionaryDataState.data.ResumeFields}
-        itemSelectorGroupsProps={availablesGroupsTitles.map(
-          (availableGroupTitle) => ({
-            title: availableGroupTitle,
-            items: dictionariesKeys
-              .filter((key) => isAvailableGroupItem(key, availableGroupTitle))
+        itemSelectorGroups={availablesSectionsCategories.map(
+          (availableSectionCategory) => ({
+            category: availableSectionCategory,
+            itemsTitles: dictionariesKeys
+              .filter((key) =>
+                isAvailableSectionItemTitleKey(key, availableSectionCategory),
+              )
               .map((key) => ({
-                itemKey: key,
-                itemValue: dictionaryDataState.data[key],
+                itemTitleKey: key,
+                itemTitleValue: dictionaryDataState.data[key],
               })),
           }),
         )}
