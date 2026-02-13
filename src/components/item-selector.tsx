@@ -26,7 +26,7 @@ const ItemSelector = ({ item }: { item: IItem<IAvailableGroupTitle> }) => {
       ) : (
         <FaRegSquare className="icon" />
       )}
-      <span>{item.itemValue}</span>
+      <span className="item-selector-item">{item.itemValue}</span>
     </div>
   );
 };
