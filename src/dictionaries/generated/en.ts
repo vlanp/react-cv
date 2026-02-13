@@ -33,10 +33,10 @@ education3_school: string;
 education3_period: string;
 projects_section: string;
 projects1_title: string;
-projects1_desc: string;
-projects1_desc_feature1: string;
-projects1_desc_feature2: string;
-projects1_desc_feature3: string;
+projects1_desc1: string;
+projects1_desc1_feature1: string;
+projects1_desc1_feature2: string;
+projects1_desc1_feature3: string;
 projects2_title: string;
 projects2_desc1: string;
 projects2_desc1_feature1: string;
@@ -84,10 +84,10 @@ export const enDictionary: IEnDictionary = {
   education3_period: 'May 2024 - July 2024 (10 weeks)',
   projects_section: 'Personal projects',
   projects1_title: 'Interactive map powered by OpenStreetMap data',
-  projects1_desc: 'Android application that allows to:',
-  projects1_desc_feature1: 'Reposition on a map based on the indicated location',
-  projects1_desc_feature2: 'Display points of interest around this location on the map',
-  projects1_desc_feature3: 'Click on a point of interest to display its information',
+  projects1_desc1: 'Android application that allows to:',
+  projects1_desc1_feature1: 'Reposition on a map based on the indicated location',
+  projects1_desc1_feature2: 'Display points of interest around this location on the map',
+  projects1_desc1_feature3: 'Click on a point of interest to display its information',
   projects2_title: 'Codeur.com scraping',
   projects2_desc1: 'Python application for Windows that allows to:',
   projects2_desc1_feature1: 'Retrieve job offers from Codeur.com',
