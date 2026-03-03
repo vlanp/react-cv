@@ -4,14 +4,14 @@ import ItemSelectorGroup from "./item-selector-group";
 import "./item-selector-panel.css";
 import { FaSquareCaretDown } from "react-icons/fa6";
 import { FaSquareCaretUp } from "react-icons/fa6";
-import type { IAvailableSectionCategory } from "../zustand/useItemsStore";
+import type { ICategoryKey, IItemIndex } from "../zustand/useItemsStore";
 
-const ItemSelectorPanel = <T extends IAvailableSectionCategory>({
+const ItemSelectorPanel = <T extends ICategoryKey, K extends IItemIndex<T>>({
   title,
   itemSelectorGroups,
 }: {
   title: string;
-  itemSelectorGroups: IItemSelectorGroup<T>[];
+  itemSelectorGroups: IItemSelectorGroup<T, K>[];
 }) => {
   const [show, setShow] = useState<boolean>(false);
 

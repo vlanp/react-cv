@@ -1,17 +1,20 @@
+import type { IDictionary } from "../dictionaries/generated";
 import type {
-  IAvailableSectionCategory,
-  ISectionItemTitleKey,
-  ISectionItemTitleValue,
+  ICategoryKey,
+  IItemId,
+  IItemIndex,
 } from "../zustand/useItemsStore";
 
-interface IItemTitle<T extends IAvailableSectionCategory> {
-  itemTitleKey: ISectionItemTitleKey<T>;
-  itemTitleValue: ISectionItemTitleValue<T>;
+interface IItem<T extends ICategoryKey, K extends IItemIndex<T>> {
+  itemId: IItemId<T, K>;
+  itemTitle: IDictionary[T]["items"][K] extends { title: infer Title }
+    ? Title
+    : never;
 }
 
-interface IItemSelectorGroup<T extends IAvailableSectionCategory> {
+interface IItemSelectorGroup<T extends ICategoryKey, K extends IItemIndex<T>> {
   category: T;
-  itemsTitles: IItemTitle<T>[];
+  items: IItem<T, K>[];
 }
 
-export type { IItemSelectorGroup, IItemTitle };
+export type { IItemSelectorGroup, IItem };

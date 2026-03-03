@@ -1,25 +1,21 @@
 import "./item-selector.css";
 import { FaRegSquare } from "react-icons/fa6";
 import { FaRegSquareCheck } from "react-icons/fa6";
-import {
-  useItemsStore,
-  type IAvailableSectionCategory,
-} from "../zustand/useItemsStore";
-import type { IItemTitle } from "../types/IItemSelectorGroup";
+import useItemsContext from "../hooks/useItemsContext";
+import type { ICategoryKey, IItemIndex } from "../zustand/useItemsStore";
+import type { IItem } from "../types/IItemSelectorGroup";
 
-const ItemSelector = ({
-  itemTitle,
+const ItemSelector = <T extends ICategoryKey, K extends IItemIndex<T>>({
+  item,
 }: {
-  itemTitle: IItemTitle<IAvailableSectionCategory>;
+  item: IItem<T, K>;
 }) => {
-  const isSelected = useItemsStore(
-    (state) => state.itemsStates[itemTitle.itemTitleKey],
-  );
-  const setIsSelected = useItemsStore((state) => state.setItemState);
+  const isSelected = useItemsContext((state) => state.itemsStates[item.itemId]);
+  const setIsSelected = useItemsContext((state) => state.setItemState);
 
   const handleClick = () => {
-    localStorage.setItem(itemTitle.itemTitleKey, String(!isSelected));
-    setIsSelected(itemTitle.itemTitleKey, !isSelected);
+    localStorage.setItem(item.itemId, String(!isSelected));
+    setIsSelected(item.itemId, !isSelected);
   };
 
   return (
@@ -32,7 +28,7 @@ const ItemSelector = ({
       ) : (
         <FaRegSquare className="icon" />
       )}
-      <span className="item-selector-item">{itemTitle.itemTitleValue}</span>
+      <span className="item-selector-item">{item.itemTitle}</span>
     </div>
   );
 };
