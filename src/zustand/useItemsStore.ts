@@ -15,6 +15,8 @@ type ICategoryKey = {
     : never;
 }[keyof IDictionary];
 
+type ICategoryTitle<T extends ICategoryKey> = IDictionary[T]["title"];
+
 const categoriesKeys = [
   "educations",
   "experiences",
@@ -59,28 +61,39 @@ const categoriesKeys = [
 //   );
 // }
 
-type IItemIndex<T extends ICategoryKey> = Extract<
+type IItemIndex<T extends ICategoryKey = ICategoryKey> = Extract<
   keyof IDictionary[T]["items"],
   string
 >;
 
-type IItemId<T extends ICategoryKey, K extends IItemIndex<T>> = `${T}_${K}`;
+type IItemId<T extends ICategoryKey = ICategoryKey> = T extends ICategoryKey
+  ? `${T}_${IItemIndex<T>}`
+  : never;
+
+const createItemId = <T extends ICategoryKey>(
+  categoryKey: T,
+  itemIndex: IItemIndex<T>,
+): IItemId<T> => `${categoryKey}_${itemIndex}` as IItemId<T>;
+
+type IItemTitle<T extends ICategoryKey> =
+  IDictionary[T]["items"][IItemIndex<T>] extends {
+    title: infer Title;
+  }
+    ? Title & string
+    : never;
 
 interface IItemsStoreStates {
-  itemsStates: Record<IItemId<ICategoryKey, IItemIndex<ICategoryKey>>, boolean>;
+  itemsStates: Record<IItemId, boolean>;
 }
 
 interface IItemsStoreActions {
-  setItemState: (
-    item: IItemId<ICategoryKey, IItemIndex<ICategoryKey>>,
-    isSelected: boolean,
-  ) => void;
+  setItemState: (item: IItemId, isSelected: boolean) => void;
 }
 
 const setItemState = (
-  item: IItemId<ICategoryKey, IItemIndex<ICategoryKey>>,
+  item: IItemId,
   isSelected: boolean,
-  itemsStates: Record<IItemId<ICategoryKey, IItemIndex<ICategoryKey>>, boolean>,
+  itemsStates: Record<IItemId, boolean>,
 ) => {
   return {
     ...itemsStates,
@@ -88,9 +101,7 @@ const setItemState = (
   };
 };
 
-const getItemState = (
-  itemId: IItemId<ICategoryKey, IItemIndex<ICategoryKey>>,
-) => {
+const getItemState = (itemId: IItemId) => {
   const itemTitleValue = localStorage.getItem(itemId);
   try {
     if (itemTitleValue) {
@@ -103,23 +114,13 @@ const getItemState = (
   }
 };
 
-const createItemId = <T extends ICategoryKey, K extends IItemIndex<T>>(
-  categoryKey: T,
-  itemIndex: K,
-): IItemId<T, K> => `${categoryKey}_${itemIndex}`;
-
-const createItemsStore = async <
-  T extends ICategoryKey,
-  K extends IItemIndex<T>,
->(
-  lang: ILang,
-) => {
+const createItemsStore = async (lang: ILang) => {
   const dictionary = await getDictionaryAsync(lang);
-  const itemsIds: IItemId<T, K>[] = [];
+  const itemsIds: IItemId[] = [];
   for (const categoryKey of categoriesKeys) {
-    const indexes = Object.keys(dictionary[categoryKey]["items"]) as IItemIndex<
-      typeof categoryKey
-    >[];
+    const indexes = Object.keys(
+      dictionary[categoryKey]["items"],
+    ) as IItemIndex[];
     indexes.forEach((index) => itemsIds.push(createItemId(categoryKey, index)));
   }
   return createStore<IItemsStoreStates & IItemsStoreActions>((set) => ({
@@ -128,12 +129,9 @@ const createItemsStore = async <
         acc[key] = getItemState(key);
         return acc;
       },
-      {} as Record<IItemId<ICategoryKey, IItemIndex<ICategoryKey>>, boolean>,
+      {} as Record<IItemId<ICategoryKey>, boolean>,
     ),
-    setItemState: (
-      item: IItemId<ICategoryKey, IItemIndex<ICategoryKey>>,
-      isSelected: boolean,
-    ) =>
+    setItemState: (item: IItemId<ICategoryKey>, isSelected: boolean) =>
       set((state) => ({
         itemsStates: setItemState(item, isSelected, state.itemsStates),
       })),
@@ -145,7 +143,9 @@ type IItemsStore = Awaited<ReturnType<typeof createItemsStore>>;
 export type {
   ICategoryWithItems,
   ICategoryKey,
+  ICategoryTitle,
   IItemId,
+  IItemTitle,
   IItemsStore,
   IItemsStoreStates,
   IItemsStoreActions,

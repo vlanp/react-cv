@@ -70,7 +70,7 @@ function processObject(obj: object): { code: string; types: string } {
         const escapedValue = value.replace(/'/g, "\\'").replace(/\n/g, "\\n");
         return {
           code: `${indent}${formattedKey}: '${escapedValue}'`,
-          type: `${formattedKey}: string`,
+          type: `${formattedKey}: "${value}"`,
         };
       }
     } else if (typeof value === "object" && value !== null) {

@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import { ELang } from "./types/ILang.ts";
 import Home from "./home.tsx";
 import Resume from "./resume.tsx";
-import Test from "./test.tsx";
+// import Test from "./test.tsx";
 import ItemsProvider from "./Providers/items-provider.tsx";
 
 createRoot(document.getElementById("root")!).render(
@@ -15,11 +15,16 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route index element={<Home />} />
         {Object.values(ELang).map((lang) => (
-          <ItemsProvider lang={lang}>
-            <Route path={lang + "/:theme?"} element={<Resume lang={lang} />} />
-          </ItemsProvider>
+          <Route
+            path={lang + "/:theme?"}
+            element={
+              <ItemsProvider lang={lang}>
+                <Resume lang={lang} />
+              </ItemsProvider>
+            }
+          />
         ))}
-        <Route path="/test" element={<Test />} />
+        {/* <Route path="/test" element={<Test />} /> */}
       </Routes>
     </BrowserRouter>
   </StrictMode>,

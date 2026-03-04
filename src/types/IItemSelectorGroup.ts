@@ -1,20 +1,19 @@
-import type { IDictionary } from "../dictionaries/generated";
 import type {
   ICategoryKey,
+  ICategoryTitle,
   IItemId,
-  IItemIndex,
+  IItemTitle,
 } from "../zustand/useItemsStore";
 
-interface IItem<T extends ICategoryKey, K extends IItemIndex<T>> {
-  itemId: IItemId<T, K>;
-  itemTitle: IDictionary[T]["items"][K] extends { title: infer Title }
-    ? Title
-    : never;
+interface IItem<T extends ICategoryKey> {
+  itemId: IItemId<T>;
+  itemTitle: IItemTitle<T>;
 }
 
-interface IItemSelectorGroup<T extends ICategoryKey, K extends IItemIndex<T>> {
-  category: T;
-  items: IItem<T, K>[];
+interface IItemSelectorGroup<T extends ICategoryKey> {
+  categoryKey: T;
+  categoryTitle: ICategoryTitle<T>;
+  items: IItem<T>[];
 }
 
 export type { IItemSelectorGroup, IItem };

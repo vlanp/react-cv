@@ -32,15 +32,15 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
       </div>
       <div className="body-div">
         <div className="personal-information-div" id="personal-information">
-          <h2>{dictionary.about_section}</h2>
+          <h2>{dictionary.about.title}</h2>
           <p className="small-size-text normal-color-text text-with-icon">
             <FaHourglassStart className="icon" />
             {age}
-            <span>{dictionary.age}</span>
+            <span>{dictionary.about.age}</span>
           </p>
           <p className="small-size-text normal-color-text text-with-icon">
             <FaLocationDot className="icon" />
-            <span>{dictionary.address}</span>
+            <span>{dictionary.about.address}</span>
           </p>
           <a
             href="mailto:vguillaumedev@gmail.com"
@@ -58,7 +58,7 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
           </a>
         </div>
         <div className="social-div" id="social">
-          <h2>{dictionary.social_section}</h2>
+          <h2>{dictionary.social.title}</h2>
           <a
             href="https://github.com/vlanp"
             target="_blank"

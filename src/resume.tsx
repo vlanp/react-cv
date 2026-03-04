@@ -8,7 +8,7 @@ import {
   FetchDataSuccess,
   type IFetchDataState,
 } from "./types/IFetchDataState";
-import { dictionariesKeys, type IDictionary } from "./dictionaries/generated";
+import { type IDictionary } from "./dictionaries/generated";
 import AppSkeleton from "./resume-skeleton";
 import LeftResume from "./resume/left-resume";
 import RightResume from "./resume/right-resume";
@@ -129,10 +129,11 @@ function Resume({ lang }: { lang: ILang }) {
             dictionaryDataState.data[categoryKey].items,
           ) as (keyof IDictionary[ICategoryKey]["items"])[];
           return {
-            category: categoryKey,
-            items: keys.map((key, index) => ({
-              itemId: createItemId(categoryKey, index),
-              itemTitle: dictionaryDataState.data[categoryKey].items[key],
+            categoryKey: categoryKey,
+            categoryTitle: dictionaryDataState.data[categoryKey].title,
+            items: keys.map((key) => ({
+              itemId: createItemId(categoryKey, key),
+              itemTitle: dictionaryDataState.data[categoryKey].items[key].title,
             })),
           };
         })}

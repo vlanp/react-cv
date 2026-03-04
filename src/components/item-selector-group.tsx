@@ -1,20 +1,20 @@
 import type { IItemSelectorGroup } from "../types/IItemSelectorGroup";
-import type { ICategoryKey, IItemIndex } from "../zustand/useItemsStore";
+import type { ICategoryKey } from "../zustand/useItemsStore";
 import ItemSelector from "./item-selector";
 import "./item-selector-group.css";
 
-const ItemSelectorGroup = <T extends ICategoryKey, K extends IItemIndex<T>>({
+const ItemSelectorGroup = <T extends ICategoryKey>({
   itemSelectorGroup,
 }: {
-  itemSelectorGroup: IItemSelectorGroup<T, K>;
+  itemSelectorGroup: IItemSelectorGroup<T>;
 }) => {
   return (
     <div className="item-selector-group">
       <h2 className="item-selector-group-title">
-        {itemSelectorGroup.category}
+        {itemSelectorGroup.categoryTitle}
       </h2>
       {itemSelectorGroup.items.map((item) => (
-        <ItemSelector item={item} />
+        <ItemSelector key={item.itemId} item={item} />
       ))}
     </div>
   );
