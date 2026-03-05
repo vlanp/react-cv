@@ -12,6 +12,12 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
       itemsStates[key as keyof typeof itemsStates],
   ) as IItemId<"educations">[];
 
+  const experienceItemsStates = Object.keys(itemsStates).filter(
+    (key) =>
+      key.startsWith("experiences") &&
+      itemsStates[key as keyof typeof itemsStates],
+  ) as IItemId<"experiences">[];
+
   const projectsItemsStates = Object.keys(itemsStates).filter(
     (key) =>
       key.startsWith("projects") &&
@@ -31,12 +37,45 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
               return (
                 <div key={itemId} className="education-div">
                   <h3>{dictionary.educations.items[key].title}</h3>
-                  <p className="small-size-text normal-color-text">
+                  <p className="small-size-text light-color-text">
                     {dictionary.educations.items[key].school}
                   </p>
-                  <p className="smaller-size-text normal-color-text">
+                  <p className="smaller-size-text light-color-text">
                     {dictionary.educations.items[key].period}
                   </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+      {experienceItemsStates.length > 0 && (
+        <div id="experience">
+          <h2>{dictionary.experiences.title}</h2>
+          <div className="experiences-div">
+            {experienceItemsStates.map((itemId) => {
+              const key = itemId.split(
+                "_",
+              )[1] as keyof IDictionary["experiences"]["items"];
+              return (
+                <div key={itemId} className="experience-div">
+                  <h3>{dictionary.experiences.items[key].title}</h3>
+                  <p className="small-size-text light-color-text">
+                    {dictionary.experiences.items[key].company}
+                  </p>
+                  <p className="smaller-size-text light-color-text">
+                    {dictionary.experiences.items[key].period}
+                  </p>
+                  <p className="smaller-size-text light-color-text">
+                    {dictionary.experiences.items[key].skills.title}
+                  </p>
+                  <ul className="smaller-size-text light-color-text list">
+                    {Object.values(
+                      dictionary.experiences.items[key].skills.items,
+                    ).map((skill) => (
+                      <li key={skill}>{skill}</li>
+                    ))}
+                  </ul>
                 </div>
               );
             })}

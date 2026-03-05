@@ -19,7 +19,7 @@ profile: {
   description: "Depuis 3 ans, j'apprends la programmation en parallèle de mon métier. Constatant un manque de progression / épanouissement dans mon rôle de métrologue, j'ai suivi un bootcamp de 10 semaines début 2024 pour amorcer ma reconversion."
 };
 experiences: {
-  title: "Experience";
+  title: "Experiences";
   items: {
   "0": {
   title: "TECHNICIEN MÉTROLOGUE";
@@ -118,7 +118,7 @@ export const frDictionary: IFrDictionary = {
     description: 'Depuis 3 ans, j\'apprends la programmation en parallèle de mon métier. Constatant un manque de progression / épanouissement dans mon rôle de métrologue, j\'ai suivi un bootcamp de 10 semaines début 2024 pour amorcer ma reconversion.'
   },
   experiences: {
-    title: 'Experience',
+    title: 'Experiences',
     items: {
       "0": {
         title: 'TECHNICIEN MÉTROLOGUE',

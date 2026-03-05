@@ -11,7 +11,8 @@
 }
 
 .educations-div,
-.projects-div {
+.projects-div,
+.experiences-div {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -19,7 +20,7 @@
 
 .education-div,
 .project-div,
-.other-skills-div {
+.experience-div {
   display: flex;
   flex-direction: column;
   align-items: "start";
@@ -27,7 +28,7 @@
   gap: 5px;
 }
 
-.all_technos {
+/* .all_technos {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,9 +38,9 @@
   border-radius: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-}
+} */
 
-.techno-img-container,
+/* .techno-img-container,
 .techno-img-little-container {
   height: 50px;
   overflow: hidden;
@@ -54,7 +55,7 @@
 
 .techno-img-little-container {
   width: 60px;
-}
+} */
 
 @media (max-width: 1024px) {
   h2 {
@@ -66,11 +67,11 @@
   .education-div {
     align-items: center;
   }
-  .all_technos {
+  /* .all_technos {
     gap: 20px;
     align-self: center;
     justify-content: space-evenly;
-  }
+  } */
   .list-div {
     width: fit-content;
     align-self: center;

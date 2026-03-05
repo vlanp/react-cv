@@ -19,7 +19,7 @@ profile: {
   description: "For 3 years, I have been learning programming alongside my job. Noticing a lack of progression / fulfillment in my role as a metrologist, I followed a 10-week bootcamp in early 2024 to initiate my career transition."
 };
 experiences: {
-  title: "Experience";
+  title: "Experiences";
   items: {
   "0": {
   title: "METROLOGY TECHNICIAN";
@@ -118,7 +118,7 @@ export const enDictionary: IEnDictionary = {
     description: 'For 3 years, I have been learning programming alongside my job. Noticing a lack of progression / fulfillment in my role as a metrologist, I followed a 10-week bootcamp in early 2024 to initiate my career transition.'
   },
   experiences: {
-    title: 'Experience',
+    title: 'Experiences',
     items: {
       "0": {
         title: 'METROLOGY TECHNICIAN',
