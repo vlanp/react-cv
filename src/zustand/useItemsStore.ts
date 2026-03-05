@@ -21,6 +21,7 @@ const categoriesKeys = [
   "educations",
   "experiences",
   "projects",
+  "soft_skills",
 ] satisfies ICategoryKey[];
 
 // type IItemTitleKey<T extends ICategoryKey> = `${T}_items_title${}`

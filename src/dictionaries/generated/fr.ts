@@ -19,6 +19,29 @@ profile: {
   title: "Profil";
   description: "Depuis 3 ans, j'apprends la programmation en parallèle de mon métier. Constatant un manque de progression / épanouissement dans mon rôle de métrologue, j'ai suivi un bootcamp de 10 semaines début 2024 pour amorcer ma reconversion."
 };
+soft_skills: {
+  title: "Savoir-être";
+  items: {
+  "0": {
+  title: "Autonomie"
+};
+  "1": {
+  title: "Curiosité"
+};
+  "2": {
+  title: "Esprit d'équipe"
+};
+  "3": {
+  title: "Adaptabilité"
+};
+  "4": {
+  title: "Capacité de résolution de problèmes"
+};
+  "5": {
+  title: "Rigueur"
+}
+}
+};
 experiences: {
   title: "Experiences";
   items: {
@@ -118,6 +141,29 @@ export const frDictionary: IFrDictionary = {
   profile: {
     title: 'Profil',
     description: 'Depuis 3 ans, j\'apprends la programmation en parallèle de mon métier. Constatant un manque de progression / épanouissement dans mon rôle de métrologue, j\'ai suivi un bootcamp de 10 semaines début 2024 pour amorcer ma reconversion.'
+  },
+  soft_skills: {
+    title: 'Savoir-être',
+    items: {
+      "0": {
+        title: 'Autonomie'
+      },
+      "1": {
+        title: 'Curiosité'
+      },
+      "2": {
+        title: 'Esprit d\'équipe'
+      },
+      "3": {
+        title: 'Adaptabilité'
+      },
+      "4": {
+        title: 'Capacité de résolution de problèmes'
+      },
+      "5": {
+        title: 'Rigueur'
+      }
+    }
   },
   experiences: {
     title: 'Experiences',

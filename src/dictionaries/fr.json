@@ -16,6 +16,17 @@
     "title": "Profil",
     "description": "Depuis 3 ans, j'apprends la programmation en parallèle de mon métier. Constatant un manque de progression / épanouissement dans mon rôle de métrologue, j'ai suivi un bootcamp de 10 semaines début 2024 pour amorcer ma reconversion."
   },
+  "soft_skills": {
+    "title": "Savoir-être",
+    "items": [
+      { "title": "Autonomie" },
+      { "title": "Curiosité" },
+      { "title": "Esprit d'équipe" },
+      { "title": "Adaptabilité" },
+      { "title": "Capacité de résolution de problèmes" },
+      { "title": "Rigueur" }
+    ]
+  },
   "experiences": {
     "title": "Experiences",
     "items": [

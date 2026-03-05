@@ -19,6 +19,29 @@ profile: {
   title: "Profile";
   description: "For 3 years, I have been learning programming alongside my job. Noticing a lack of progression / fulfillment in my role as a metrologist, I followed a 10-week bootcamp in early 2024 to initiate my career transition."
 };
+soft_skills: {
+  title: "Soft skills";
+  items: {
+  "0": {
+  title: "Autonomy"
+};
+  "1": {
+  title: "Curiosity"
+};
+  "2": {
+  title: "Team spirit"
+};
+  "3": {
+  title: "Adaptability"
+};
+  "4": {
+  title: "Problem-solving skills"
+};
+  "5": {
+  title: "Rigor"
+}
+}
+};
 experiences: {
   title: "Experiences";
   items: {
@@ -118,6 +141,29 @@ export const enDictionary: IEnDictionary = {
   profile: {
     title: 'Profile',
     description: 'For 3 years, I have been learning programming alongside my job. Noticing a lack of progression / fulfillment in my role as a metrologist, I followed a 10-week bootcamp in early 2024 to initiate my career transition.'
+  },
+  soft_skills: {
+    title: 'Soft skills',
+    items: {
+      "0": {
+        title: 'Autonomy'
+      },
+      "1": {
+        title: 'Curiosity'
+      },
+      "2": {
+        title: 'Team spirit'
+      },
+      "3": {
+        title: 'Adaptability'
+      },
+      "4": {
+        title: 'Problem-solving skills'
+      },
+      "5": {
+        title: 'Rigor'
+      }
+    }
   },
   experiences: {
     title: 'Experiences',

@@ -31,9 +31,10 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
           <h2>{dictionary.educations.title}</h2>
           <div className="educations-div">
             {educationItemsStates.map((itemId) => {
-              const key = itemId.split(
-                "_",
-              )[1] as keyof IDictionary["educations"]["items"];
+              const splitted = itemId.split("_");
+              const key = splitted[
+                splitted.length - 1
+              ] as keyof IDictionary["educations"]["items"];
               return (
                 <div key={itemId} className="education-div">
                   <h3>{dictionary.educations.items[key].title}</h3>
@@ -54,9 +55,10 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
           <h2>{dictionary.experiences.title}</h2>
           <div className="experiences-div">
             {experienceItemsStates.map((itemId) => {
-              const key = itemId.split(
-                "_",
-              )[1] as keyof IDictionary["experiences"]["items"];
+              const splitted = itemId.split("_");
+              const key = splitted[
+                splitted.length - 1
+              ] as keyof IDictionary["experiences"]["items"];
               return (
                 <div key={itemId} className="experience-div">
                   <h3>{dictionary.experiences.items[key].title}</h3>
@@ -87,9 +89,10 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
           <h2>{dictionary.projects.title}</h2>
           <div className="projects-div">
             {projectsItemsStates.map((itemId) => {
-              const key = itemId.split(
-                "_",
-              )[1] as keyof IDictionary["projects"]["items"];
+              const splitted = itemId.split("_");
+              const key = splitted[
+                splitted.length - 1
+              ] as keyof IDictionary["projects"]["items"];
               return (
                 <div key={itemId} className="project-div">
                   <h3>{dictionary.projects.items[key].title}</h3>

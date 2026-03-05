@@ -16,6 +16,17 @@
     "title": "Profile",
     "description": "For 3 years, I have been learning programming alongside my job. Noticing a lack of progression / fulfillment in my role as a metrologist, I followed a 10-week bootcamp in early 2024 to initiate my career transition."
   },
+  "soft_skills": {
+    "title": "Soft skills",
+    "items": [
+      { "title": "Autonomy" },
+      { "title": "Curiosity" },
+      { "title": "Team spirit" },
+      { "title": "Adaptability" },
+      { "title": "Problem-solving skills" },
+      { "title": "Rigor" }
+    ]
+  },
   "experiences": {
     "title": "Experiences",
     "items": [

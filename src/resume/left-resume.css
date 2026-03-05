@@ -27,7 +27,7 @@
 .personal-information-div,
 .social-div,
 .profile-div,
-.experience-div {
+.soft-skills-div {
   display: flex;
   flex-direction: column;
   align-items: "start";
@@ -51,7 +51,7 @@
   .personal-information-div,
   .social-div,
   .profile-div,
-  .experience-div {
+  .soft-skills-div {
     align-items: center;
     width: 47%;
     padding-left: var(--margin-2);
@@ -70,7 +70,7 @@
   .personal-information-div,
   .social-div,
   .profile-div,
-  .experience-div {
+  .soft-skills-div {
     width: 97%;
   }
 }
