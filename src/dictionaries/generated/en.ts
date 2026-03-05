@@ -9,7 +9,8 @@ research_2: "(18 months)";
 about: {
   title: "About";
   age: " years old";
-  address: "Rouen, France"
+  address: "Rouen, France";
+  driving_licence: "Driving licence B + vehicle"
 };
 social: {
   title: "Social"
@@ -108,7 +109,8 @@ export const enDictionary: IEnDictionary = {
   about: {
     title: 'About',
     age: ' years old',
-    address: 'Rouen, France'
+    address: 'Rouen, France',
+    driving_licence: 'Driving licence B + vehicle'
   },
   social: {
     title: 'Social'

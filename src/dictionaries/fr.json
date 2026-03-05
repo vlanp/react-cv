@@ -6,7 +6,8 @@
   "about": {
     "title": "À propos",
     "age": " ans",
-    "address": "Rouen, France"
+    "address": "Rouen, France",
+    "driving_licence": "Permis B + véhicule"
   },
   "social": {
     "title": "Social"

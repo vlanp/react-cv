@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaHourglassStart,
   FaLink,
+  FaCar,
 } from "react-icons/fa6";
 import type { IDictionary } from "../dictionaries/generated";
 import "./left-resume.css";
@@ -56,6 +57,10 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
             <FaPhone className="icon" />
             06.59.44.71.34
           </a>
+          <p className="small-size-text normal-color-text text-with-icon">
+            <FaCar className="icon" />
+            <span>{dictionary.about.driving_licence}</span>
+          </p>
         </div>
         <div className="social-div" id="social">
           <h2>{dictionary.social.title}</h2>
@@ -85,9 +90,9 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
           </a>
         </div>
         <div className="profile-div" id="profile">
-          <h2>{dictionary.profile_section}</h2>
-          <p className="normal-size-text normal-color-text">
-            {dictionary.profile_description}
+          <h2>{dictionary.profile.title}</h2>
+          <p className="normal-size-text normal-color-text justified-text">
+            {dictionary.profile.description}
           </p>
         </div>
         <div className="experience-div" id="experience">

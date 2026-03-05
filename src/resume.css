@@ -83,6 +83,10 @@ h3 {
   );
 }
 
+.justified-text {
+  text-align: justify;
+}
+
 .hover:hover {
   color: light-dark(var(--light-basic-link), var(--dark-basic-link));
   cursor: pointer;

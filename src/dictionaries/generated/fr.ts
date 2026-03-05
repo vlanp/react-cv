@@ -9,7 +9,8 @@ research_2: "(18 mois)";
 about: {
   title: "À propos";
   age: " ans";
-  address: "Rouen, France"
+  address: "Rouen, France";
+  driving_licence: "Permis B + véhicule"
 };
 social: {
   title: "Social"
@@ -108,7 +109,8 @@ export const frDictionary: IFrDictionary = {
   about: {
     title: 'À propos',
     age: ' ans',
-    address: 'Rouen, France'
+    address: 'Rouen, France',
+    driving_licence: 'Permis B + véhicule'
   },
   social: {
     title: 'Social'
