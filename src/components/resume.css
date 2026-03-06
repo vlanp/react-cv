@@ -1,0 +1,24 @@
+.resume-section {
+  width: calc(1024px - 2 * 3rem);
+  height: calc((1024px - 2 * 3rem) / 0.707);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
+  position: relative;
+}
+
+.top-resume-div {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 1024px) {
+  .resume-section {
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+  }
+  #download-button {
+    left: 49%;
+  }
+}

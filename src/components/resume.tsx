@@ -1,3 +1,4 @@
+import "./resume.css";
 import { FaDownload } from "react-icons/fa6";
 import { ETheme, type ITheme } from "../types/ITheme";
 import BottomResume from "./resume/bottom-resume";
