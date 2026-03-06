@@ -1,0 +1,8 @@
+.resume-bottom-section {
+  background-color: light-dark(
+    var(--light-bottom-container-color),
+    var(--dark-bottom-container-color)
+  );
+  flex: 1;
+  width: 100%;
+}

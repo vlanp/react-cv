@@ -1,6 +1,6 @@
-import type { IDictionary } from "../dictionaries/generated";
-import useItemsContext from "../hooks/useItemsContext";
-import type { IItemId } from "../zustand/useItemsStore";
+import type { IDictionary } from "../../dictionaries/generated";
+import useItemsContext from "../../hooks/useItemsContext";
+import type { IItemId } from "../../zustand/useItemsStore";
 import "./right-resume.css";
 
 const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { IItemSelectorGroup } from "../types/IItemSelectorGroup";
-import ItemSelectorGroup from "./item-selector-group";
+import ItemSelectorGroup from "./item-selector-panel/item-selector-group";
 import "./item-selector-panel.css";
 import { FaSquareCaretDown } from "react-icons/fa6";
 import { FaSquareCaretUp } from "react-icons/fa6";

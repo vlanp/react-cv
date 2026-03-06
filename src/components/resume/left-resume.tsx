@@ -8,12 +8,12 @@ import {
   FaLink,
   FaCar,
 } from "react-icons/fa6";
-import type { IDictionary } from "../dictionaries/generated";
+import type { IDictionary } from "../../dictionaries/generated";
 import "./left-resume.css";
-import { getAge } from "../utils";
+import { getAge } from "../../utils";
 import { useMemo } from "react";
-import useItemsContext from "../hooks/useItemsContext";
-import type { IItemId } from "../zustand/useItemsStore";
+import useItemsContext from "../../hooks/useItemsContext";
+import type { IItemId } from "../../zustand/useItemsStore";
 
 const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
   const age = useMemo(() => getAge("1997-12-30"), []);

@@ -1,9 +1,9 @@
 import "./item-selector.css";
 import { FaRegSquare } from "react-icons/fa6";
 import { FaRegSquareCheck } from "react-icons/fa6";
-import useItemsContext from "../hooks/useItemsContext";
-import type { ICategoryKey } from "../zustand/useItemsStore";
-import type { IItem } from "../types/IItemSelectorGroup";
+import useItemsContext from "../../../hooks/useItemsContext";
+import type { ICategoryKey } from "../../../zustand/useItemsStore";
+import type { IItem } from "../../../types/IItemSelectorGroup";
 
 const ItemSelector = <T extends ICategoryKey>({ item }: { item: IItem<T> }) => {
   const isSelected = useItemsContext((state) => state.itemsStates[item.itemId]);

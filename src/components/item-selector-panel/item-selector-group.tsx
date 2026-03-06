@@ -1,6 +1,6 @@
-import type { IItemSelectorGroup } from "../types/IItemSelectorGroup";
-import type { ICategoryKey } from "../zustand/useItemsStore";
-import ItemSelector from "./item-selector";
+import type { IItemSelectorGroup } from "../../types/IItemSelectorGroup";
+import type { ICategoryKey } from "../../zustand/useItemsStore";
+import ItemSelector from "./item-selector-group/item-selector";
 import "./item-selector-group.css";
 
 const ItemSelectorGroup = <T extends ICategoryKey>({

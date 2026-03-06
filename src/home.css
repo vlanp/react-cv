@@ -22,10 +22,14 @@ html {
   width: calc(1024px - 2 * 3rem);
   height: calc((1024px - 2 * 3rem) / 0.707);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
   position: relative;
-  flex-shrink: 0;
+}
+
+.top-resume-div {
+  display: flex;
+  flex-direction: row;
 }
 
 body {
