@@ -38,12 +38,14 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
               return (
                 <div key={itemId} className="education-div">
                   <h3>{dictionary.educations.items[key].title}</h3>
-                  <p className="small-size-text light-color-text">
-                    {dictionary.educations.items[key].school}
-                  </p>
-                  <p className="smaller-size-text light-color-text">
-                    {dictionary.educations.items[key].period}
-                  </p>
+                  <div className="education-place-div">
+                    <p className="small-size-text light-color-text">
+                      {dictionary.educations.items[key].school}
+                    </p>
+                    <p className="smaller-size-text light-color-text">
+                      {dictionary.educations.items[key].period}
+                    </p>
+                  </div>
                 </div>
               );
             })}
@@ -62,12 +64,14 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
               return (
                 <div key={itemId} className="experience-div">
                   <h3>{dictionary.experiences.items[key].title}</h3>
-                  <p className="small-size-text light-color-text">
-                    {dictionary.experiences.items[key].company}
-                  </p>
-                  <p className="smaller-size-text light-color-text">
-                    {dictionary.experiences.items[key].period}
-                  </p>
+                  <div className="experience-place-div">
+                    <p className="small-size-text light-color-text">
+                      {dictionary.experiences.items[key].company}
+                    </p>
+                    <p className="smaller-size-text light-color-text">
+                      {dictionary.experiences.items[key].period}
+                    </p>
+                  </div>
                   <p className="smaller-size-text light-color-text">
                     {dictionary.experiences.items[key].skills.title}
                   </p>

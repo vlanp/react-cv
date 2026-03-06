@@ -64,8 +64,16 @@
   h3 {
     text-align: center;
   }
-  .education-div {
-    align-items: center;
+  .education-div,
+  .project-div,
+  .experience-div {
+    width: 80%;
+    max-width: 400px;
+    align-self: center;
+  }
+  .education-place-div,
+  .experience-place-div {
+    text-align: center;
   }
   /* .all_technos {
     gap: 20px;
@@ -73,8 +81,6 @@
     justify-content: space-evenly;
   } */
   .list-div {
-    width: fit-content;
-    align-self: center;
     line-height: 1.1rem;
   }
 }

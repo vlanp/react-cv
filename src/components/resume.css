@@ -18,6 +18,9 @@
     width: fit-content;
     height: fit-content;
   }
+  .top-resume-div {
+    flex-direction: column;
+  }
   #download-button {
     left: 49%;
   }
