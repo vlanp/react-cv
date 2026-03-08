@@ -106,5 +106,9 @@
         }
       }
     ]
-  }
+  },
+  "other_technos": "Autres technos",
+  "typescript": "TypeScript",
+  "kotlin": "Kotlin",
+  "python": "Python"
 }

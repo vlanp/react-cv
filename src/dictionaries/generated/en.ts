@@ -122,6 +122,10 @@ projects: {
 }
 }
 };
+other_technos: "Other technos";
+typescript: "TypeScript";
+kotlin: "Kotlin";
+python: "Python";
 }
 
 export const enDictionary: IEnDictionary = {
@@ -244,7 +248,11 @@ export const enDictionary: IEnDictionary = {
         }
       }
     }
-  }
+  },
+  other_technos: 'Other technos',
+  typescript: 'TypeScript',
+  kotlin: 'Kotlin',
+  python: 'Python'
 } as const;
 
 export type { IEnDictionary };

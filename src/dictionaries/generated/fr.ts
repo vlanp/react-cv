@@ -122,6 +122,10 @@ projects: {
 }
 }
 };
+other_technos: "Autres technos";
+typescript: "TypeScript";
+kotlin: "Kotlin";
+python: "Python";
 }
 
 export const frDictionary: IFrDictionary = {
@@ -244,7 +248,11 @@ export const frDictionary: IFrDictionary = {
         }
       }
     }
-  }
+  },
+  other_technos: 'Autres technos',
+  typescript: 'TypeScript',
+  kotlin: 'Kotlin',
+  python: 'Python'
 } as const;
 
 export type { IFrDictionary };

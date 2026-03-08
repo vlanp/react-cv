@@ -28,35 +28,6 @@
   gap: 5px;
 }
 
-/* .all_technos {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 10px;
-  background-color: light-dark(var(--light-card-color), var(--dark-card-color));
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-} */
-
-/* .techno-img-container,
-.techno-img-little-container {
-  height: 50px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.techno-img-container {
-  width: 120px;
-}
-
-.techno-img-little-container {
-  width: 60px;
-} */
-
 @media (max-width: 1024px) {
   h2 {
     text-align: center;
