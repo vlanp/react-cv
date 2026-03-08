@@ -12,13 +12,15 @@ import { type IDictionary } from "./dictionaries/generated";
 import AppSkeleton from "./resume-skeleton";
 import { useParams } from "react-router";
 import { ETheme, type ITheme } from "./types/ITheme";
-import ItemSelectorPanel from "./components/item-selector-panel";
+import ItemSelectorPanels from "./components/item-selector-panels";
 import {
   categoriesKeys,
-  createItemId,
+  createCategoryItemId,
   type ICategoryKey,
-} from "./zustand/useItemsStore";
+} from "./zustand/createCategoryItemsStore";
 import Resume from "./components/resume";
+import type { ICategoryItemPanel, ILanguageItemPanel } from "./types/IPanels";
+import stackLogos, { type ILanguageItemKey } from "./stackLogos";
 
 /* TODO : Resolve issue with links in PDF, which are in the wrong place.
 see : https://github.com/eKoopmans/html2pdf.js/issues/725
@@ -44,6 +46,40 @@ function Home({ lang }: { lang: ILang }) {
     return <AppSkeleton />;
   }
 
+  const categoryItemPanel: ICategoryItemPanel = {
+    panelTitle: dictionaryDataState.data.resume_fields,
+    categoryItemGroups: categoriesKeys.map((categoryKey) => {
+      const keys = Object.keys(
+        dictionaryDataState.data[categoryKey].items,
+      ) as (keyof IDictionary[ICategoryKey]["items"])[];
+      return {
+        categoryKey: categoryKey,
+        categoryTitle: dictionaryDataState.data[categoryKey].title,
+        categoryItems: keys.map((key) => ({
+          categoryItemId: createCategoryItemId(categoryKey, key),
+          categoryItemTitle:
+            dictionaryDataState.data[categoryKey].items[key].title,
+        })),
+      };
+    }),
+  };
+
+  const languageItemPanel: ILanguageItemPanel = {
+    panelTitle: dictionaryDataState.data.stack,
+    languageItemGroups: (
+      Object.keys(stackLogos) as (keyof typeof stackLogos)[]
+    ).map((languageKey) => {
+      const languageItems = (
+        Object.keys(stackLogos[languageKey].items) as ILanguageItemKey[]
+      ).map((itemKey) => ({ languageItemKey: itemKey }));
+      return {
+        languageKey,
+        languageTitle: dictionaryDataState.data[languageKey],
+        languageItems,
+      };
+    }),
+  };
+
   return (
     <main
       className={
@@ -51,21 +87,9 @@ function Home({ lang }: { lang: ILang }) {
         (theme && Object.values(ETheme).includes(theme) ? theme : "")
       }
     >
-      <ItemSelectorPanel
-        title={dictionaryDataState.data.resume_fields}
-        itemSelectorGroups={categoriesKeys.map((categoryKey) => {
-          const keys = Object.keys(
-            dictionaryDataState.data[categoryKey].items,
-          ) as (keyof IDictionary[ICategoryKey]["items"])[];
-          return {
-            categoryKey: categoryKey,
-            categoryTitle: dictionaryDataState.data[categoryKey].title,
-            items: keys.map((key) => ({
-              itemId: createItemId(categoryKey, key),
-              itemTitle: dictionaryDataState.data[categoryKey].items[key].title,
-            })),
-          };
-        })}
+      <ItemSelectorPanels
+        categoryItemPanel={categoryItemPanel}
+        languageItemPanel={languageItemPanel}
       />
       <Resume
         theme={theme}

@@ -3,6 +3,7 @@
 
 interface IFrDictionary {
   resume_fields: "Champs du CV";
+stack: "Stack";
 profession: "Développeur full stack";
 research_1: "En recherche d'une alternance";
 research_2: "(18 mois)";
@@ -130,6 +131,7 @@ python: "Python";
 
 export const frDictionary: IFrDictionary = {
   resume_fields: 'Champs du CV',
+  stack: 'Stack',
   profession: 'Développeur full stack',
   research_1: 'En recherche d\'une alternance',
   research_2: '(18 mois)',

@@ -64,7 +64,7 @@ const stackLogos = {
       osmdroid: osmdroidSrc,
     },
   },
-  others: {
+  other_technos: {
     items: {
       androidStudio: androidStudioSrc,
       android: androidSrc,
@@ -80,5 +80,10 @@ const stackLogos = {
     },
   },
 };
+
+export type IStackLogos = typeof stackLogos;
+
+export type ILanguageItemKey<T extends keyof IStackLogos = keyof IStackLogos> =
+  T extends keyof IStackLogos ? keyof IStackLogos[T]["items"] : never;
 
 export default stackLogos;

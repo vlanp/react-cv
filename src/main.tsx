@@ -7,7 +7,7 @@ import { ELang } from "./types/ILang.ts";
 import LangRedirect from "./lang-redirect.tsx";
 import Home from "./home.tsx";
 // import Test from "./test.tsx";
-import ItemsProvider from "./Providers/items-provider.tsx";
+import CategoryItemsProvider from "./Providers/category-items-provider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,9 +18,9 @@ createRoot(document.getElementById("root")!).render(
           <Route
             path={lang + "/:theme?"}
             element={
-              <ItemsProvider lang={lang}>
+              <CategoryItemsProvider lang={lang}>
                 <Home lang={lang} />
-              </ItemsProvider>
+              </CategoryItemsProvider>
             }
           />
         ))}

@@ -1,85 +1,81 @@
 import type { IDictionary } from "../../dictionaries/generated";
-import stackLogos from "../../stackLogos";
+import stackLogos, { type ILanguageItemKey } from "../../stackLogos";
+import { useLanguageItemsStore } from "../../zustand/useLanguageItemsStore";
 import "./bottom-resume.css";
 
 const BottomResume = ({ dictionary }: { dictionary: IDictionary }) => {
+  const languageItemsStates = useLanguageItemsStore(
+    (state) => state.languageItemsStates,
+  );
+
+  const typescriptItemsId = (
+    Object.keys(stackLogos.typescript.items) as ILanguageItemKey<"typescript">[]
+  ).filter((key) => languageItemsStates[key]);
+  const kotlinItemsId = (
+    Object.keys(stackLogos.kotlin.items) as ILanguageItemKey<"kotlin">[]
+  ).filter((key) => languageItemsStates[key]);
+  const pythonItemsId = (
+    Object.keys(stackLogos.python.items) as ILanguageItemKey<"python">[]
+  ).filter((key) => languageItemsStates[key]);
+  const otherTechnoItemsId = (
+    Object.keys(
+      stackLogos.other_technos.items,
+    ) as ILanguageItemKey<"other_technos">[]
+  ).filter((key) => languageItemsStates[key]);
+
   return (
     <section className="resume-bottom-section">
-      <div className="language-div">
-        <h3>{dictionary.typescript}</h3>
-        <div className="technos-div">
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.android} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.pycharm} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.mySqlWorkbench} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.powerBi} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.powerBi} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.powerBi} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.powerBi} />
+      {typescriptItemsId.length > 0 && (
+        <div className="language-div">
+          <h3>{dictionary.typescript}</h3>
+          <div className="technos-div">
+            {typescriptItemsId.map((itemId) => (
+              <div key={itemId} className="techno-img-container">
+                <img width={"100%"} src={stackLogos.typescript.items[itemId]} />
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-
-      <div className="language-div">
-        <h3>{dictionary.kotlin}</h3>
-        <div className="technos-div">
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.android} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.pycharm} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.mySqlWorkbench} />
+      )}
+      {kotlinItemsId.length > 0 && (
+        <div className="language-div">
+          <h3>{dictionary.kotlin}</h3>
+          <div className="technos-div">
+            {kotlinItemsId.map((itemId) => (
+              <div key={itemId} className="techno-img-container">
+                <img width={"100%"} src={stackLogos.kotlin.items[itemId]} />
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-      <div className="language-div">
-        <h3>{dictionary.python}</h3>
-        <div className="technos-div">
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.android} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.pycharm} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.mySqlWorkbench} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.powerBi} />
+      )}
+      {pythonItemsId.length > 0 && (
+        <div className="language-div">
+          <h3>{dictionary.python}</h3>
+          <div className="technos-div">
+            {pythonItemsId.map((itemId) => (
+              <div key={itemId} className="techno-img-container">
+                <img width={"100%"} src={stackLogos.python.items[itemId]} />
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-      <div className="language-div">
-        <h3>{dictionary.other_technos}</h3>
-        <div className="technos-div">
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.android} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.pycharm} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.mySqlWorkbench} />
-          </div>
-          <div className="techno-img-container">
-            <img width={"100%"} src={stackLogos.others.items.powerBi} />
+      )}
+      {otherTechnoItemsId.length > 0 && (
+        <div className="language-div">
+          <h3>{dictionary.other_technos}</h3>
+          <div className="technos-div">
+            {otherTechnoItemsId.map((itemId) => (
+              <div key={itemId} className="techno-img-container">
+                <img
+                  width={"100%"}
+                  src={stackLogos.other_technos.items[itemId]}
+                />
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };

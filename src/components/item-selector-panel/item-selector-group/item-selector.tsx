@@ -1,19 +1,16 @@
 import "./item-selector.css";
 import { FaRegSquare } from "react-icons/fa6";
 import { FaRegSquareCheck } from "react-icons/fa6";
-import useItemsContext from "../../../hooks/useItemsContext";
-import type { ICategoryKey } from "../../../zustand/useItemsStore";
-import type { IItem } from "../../../types/IItemSelectorGroup";
 
-const ItemSelector = <T extends ICategoryKey>({ item }: { item: IItem<T> }) => {
-  const isSelected = useItemsContext((state) => state.itemsStates[item.itemId]);
-  const setIsSelected = useItemsContext((state) => state.setItemState);
-
-  const handleClick = () => {
-    localStorage.setItem(item.itemId, String(!isSelected));
-    setIsSelected(item.itemId, !isSelected);
-  };
-
+const ItemSelector = ({
+  isSelected,
+  handleClick,
+  itemTitle,
+}: {
+  isSelected: boolean;
+  handleClick: () => void;
+  itemTitle: string;
+}) => {
   return (
     <div
       className="item-selector small-size-text normal-color-text text-with-icon hover"
@@ -24,7 +21,7 @@ const ItemSelector = <T extends ICategoryKey>({ item }: { item: IItem<T> }) => {
       ) : (
         <FaRegSquare className="icon" />
       )}
-      <span className="item-selector-item">{item.itemTitle}</span>
+      <span className="item-selector-item">{itemTitle}</span>
     </div>
   );
 };

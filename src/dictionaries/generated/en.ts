@@ -3,6 +3,7 @@
 
 interface IEnDictionary {
   resume_fields: "Resume fields";
+stack: "Stack";
 profession: "Full stack developer";
 research_1: "Looking for an apprenticeship";
 research_2: "(18 months)";
@@ -130,6 +131,7 @@ python: "Python";
 
 export const enDictionary: IEnDictionary = {
   resume_fields: 'Resume fields',
+  stack: 'Stack',
   profession: 'Full stack developer',
   research_1: 'Looking for an apprenticeship',
   research_2: '(18 months)',

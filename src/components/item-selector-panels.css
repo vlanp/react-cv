@@ -12,6 +12,11 @@
 
 .item-selector-panel-title {
   justify-self: center;
+  cursor: pointer;
+  display: block;
+  font-size: var(--h1-font-size);
+  margin-top: 20px;
+  padding: 10px;
 }
 
 .item-selector-groups {

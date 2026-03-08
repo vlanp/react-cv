@@ -1,36 +1,38 @@
 import type { IDictionary } from "../../dictionaries/generated";
-import useItemsContext from "../../hooks/useItemsContext";
-import type { IItemId } from "../../zustand/useItemsStore";
+import useCategoryItemsContext from "../../hooks/useCategoryItemsContext";
+import type { ICategoryItemId } from "../../zustand/createCategoryItemsStore";
 import "./right-resume.css";
 
 const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
-  const itemsStates = useItemsContext((state) => state.itemsStates);
+  const categoryitemsStates = useCategoryItemsContext(
+    (state) => state.categoryItemsStates,
+  );
 
-  const educationItemsStates = Object.keys(itemsStates).filter(
+  const educationItemsId = Object.keys(categoryitemsStates).filter(
     (key) =>
       key.startsWith("educations") &&
-      itemsStates[key as keyof typeof itemsStates],
-  ) as IItemId<"educations">[];
+      categoryitemsStates[key as keyof typeof categoryitemsStates],
+  ) as ICategoryItemId<"educations">[];
 
-  const experienceItemsStates = Object.keys(itemsStates).filter(
+  const experienceItemsId = Object.keys(categoryitemsStates).filter(
     (key) =>
       key.startsWith("experiences") &&
-      itemsStates[key as keyof typeof itemsStates],
-  ) as IItemId<"experiences">[];
+      categoryitemsStates[key as keyof typeof categoryitemsStates],
+  ) as ICategoryItemId<"experiences">[];
 
-  const projectsItemsStates = Object.keys(itemsStates).filter(
+  const projectItemsId = Object.keys(categoryitemsStates).filter(
     (key) =>
       key.startsWith("projects") &&
-      itemsStates[key as keyof typeof itemsStates],
-  ) as IItemId<"projects">[];
+      categoryitemsStates[key as keyof typeof categoryitemsStates],
+  ) as ICategoryItemId<"projects">[];
 
   return (
     <section className="resume-right-section">
-      {educationItemsStates.length > 0 && (
+      {educationItemsId.length > 0 && (
         <div id="education">
           <h2>{dictionary.educations.title}</h2>
           <div className="educations-div">
-            {educationItemsStates.map((itemId) => {
+            {educationItemsId.map((itemId) => {
               const splitted = itemId.split("_");
               const key = splitted[
                 splitted.length - 1
@@ -52,11 +54,11 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
           </div>
         </div>
       )}
-      {experienceItemsStates.length > 0 && (
+      {experienceItemsId.length > 0 && (
         <div id="experience">
           <h2>{dictionary.experiences.title}</h2>
           <div className="experiences-div">
-            {experienceItemsStates.map((itemId) => {
+            {experienceItemsId.map((itemId) => {
               const splitted = itemId.split("_");
               const key = splitted[
                 splitted.length - 1
@@ -88,11 +90,11 @@ const RightResume = ({ dictionary }: { dictionary: IDictionary }) => {
           </div>
         </div>
       )}
-      {projectsItemsStates.length > 0 && (
+      {projectItemsId.length > 0 && (
         <div id="projects">
           <h2>{dictionary.projects.title}</h2>
           <div className="projects-div">
-            {projectsItemsStates.map((itemId) => {
+            {projectItemsId.map((itemId) => {
               const splitted = itemId.split("_");
               const key = splitted[
                 splitted.length - 1

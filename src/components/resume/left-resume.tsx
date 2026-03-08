@@ -12,18 +12,20 @@ import type { IDictionary } from "../../dictionaries/generated";
 import "./left-resume.css";
 import { getAge } from "../../utils";
 import { useMemo } from "react";
-import useItemsContext from "../../hooks/useItemsContext";
-import type { IItemId } from "../../zustand/useItemsStore";
+import useCategoryItemsContext from "../../hooks/useCategoryItemsContext";
+import type { ICategoryItemId } from "../../zustand/createCategoryItemsStore";
 
 const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
   const age = useMemo(() => getAge("1997-12-30"), []);
-  const itemsStates = useItemsContext((state) => state.itemsStates);
+  const categoryItemsStates = useCategoryItemsContext(
+    (state) => state.categoryItemsStates,
+  );
 
-  const softSkillsItemsStates = Object.keys(itemsStates).filter(
+  const softSkillItemsId = Object.keys(categoryItemsStates).filter(
     (key) =>
       key.startsWith("soft_skills") &&
-      itemsStates[key as keyof typeof itemsStates],
-  ) as IItemId<"soft_skills">[];
+      categoryItemsStates[key as keyof typeof categoryItemsStates],
+  ) as ICategoryItemId<"soft_skills">[];
 
   return (
     <section className="resume-left-section">
@@ -105,11 +107,11 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
             {dictionary.profile.description}
           </p>
         </div>
-        {softSkillsItemsStates.length > 0 && (
+        {softSkillItemsId.length > 0 && (
           <div className="soft-skills-div" id="soft-skills">
             <h2>{dictionary.soft_skills.title}</h2>
             <ul className="list small-size-text light-color-text">
-              {softSkillsItemsStates.map((itemId) => {
+              {softSkillItemsId.map((itemId) => {
                 const splitted = itemId.split("_");
                 const key = splitted[
                   splitted.length - 1
