@@ -32,58 +32,91 @@ import powerBiSrc from "./assets/stackLogos/others/power-bi.png";
 import pycharmSrc from "./assets/stackLogos/others/pycharm.png";
 import vscodeSrc from "./assets/stackLogos/others/vscode.png";
 
+// TODO Resolve issue with conditional distributive types
+
 const stackLogos = {
   typescript: {
     src: typescriptSrc,
     items: {
-      axios: axiosSrc,
-      cloudinary: cloudinarySrc,
-      expo: expoSrc,
-      express: expressSrc,
-      mongodb: mongodbSrc,
-      nodejs: nodejsSrc,
-      reactNative: reactNativeSrc,
-      react: reactSrc,
-      vite: viteSrc,
-      zustand: zustandSrc,
+      axios: { src: axiosSrc, size: "medium" },
+      cloudinary: { src: cloudinarySrc, size: "medium" },
+      expo: { src: expoSrc, size: "medium" },
+      express: { src: expressSrc, size: "medium" },
+      mongodb: { src: mongodbSrc, size: "medium" },
+      nodejs: { src: nodejsSrc, size: "medium" },
+      reactNative: { src: reactNativeSrc, size: "medium" },
+      react: { src: reactSrc, size: "medium" },
+      vite: { src: viteSrc, size: "medium" },
+      zustand: { src: zustandSrc, size: "medium" },
     },
   },
   python: {
     src: pythonSrc,
     items: {
-      chatgpt: chatgptSrc,
-      customTkinter: customTkinterSrc,
-      selenium: seleniumSrc,
-      tor: torSrc,
+      chatgpt: { src: chatgptSrc, size: "medium" },
+      customTkinter: { src: customTkinterSrc, size: "medium" },
+      selenium: { src: seleniumSrc, size: "medium" },
+      tor: { src: torSrc, size: "medium" },
     },
   },
   kotlin: {
     src: kotlinSrc,
     items: {
-      hilt: hiltSrc,
-      osmdroid: osmdroidSrc,
+      hilt: { src: hiltSrc, size: "medium" },
+      osmdroid: { src: osmdroidSrc, size: "medium" },
     },
   },
   other_technos: {
     items: {
-      androidStudio: androidStudioSrc,
-      android: androidSrc,
-      css3: css3Src,
-      github: githubSrc,
-      html5: html5Src,
-      mySqlWorkbench: mySqlWorkbenchSrc,
-      netlify: netlifySrc,
-      northflank: northflankSrc,
-      powerBi: powerBiSrc,
-      pycharm: pycharmSrc,
-      vscode: vscodeSrc,
+      androidStudio: { src: androidStudioSrc, size: "medium" },
+      android: { src: androidSrc, size: "medium" },
+      css3: { src: css3Src, size: "little" },
+      github: { src: githubSrc, size: "medium" },
+      html5: { src: html5Src, size: "little" },
+      mySqlWorkbench: { src: mySqlWorkbenchSrc, size: "medium" },
+      netlify: { src: netlifySrc, size: "medium" },
+      northflank: { src: northflankSrc, size: "medium" },
+      powerBi: { src: powerBiSrc, size: "medium" },
+      pycharm: { src: pycharmSrc, size: "medium" },
+      vscode: { src: vscodeSrc, size: "medium" },
     },
   },
 };
 
 export type IStackLogos = typeof stackLogos;
 
+export type ILanguageItems<T extends keyof IStackLogos = keyof IStackLogos> =
+  T extends keyof IStackLogos ? IStackLogos[T]["items"] : never;
+
+// export type ILanguageItems2<T extends keyof IStackLogos = keyof IStackLogos> = {
+//   [P in T]: IStackLogos[T]["items"];
+// }[T];
+
 export type ILanguageItemKey<T extends keyof IStackLogos = keyof IStackLogos> =
-  T extends keyof IStackLogos ? keyof IStackLogos[T]["items"] : never;
+  T extends keyof IStackLogos ? keyof ILanguageItems<T> : never;
+
+// export type ILanguageItemKey2<T extends keyof IStackLogos = keyof IStackLogos> =
+//   { [P in T]: keyof ILanguageItems2<T> }[T];
+
+// type IObj<T extends keyof IStackLogos = keyof IStackLogos> = T extends keyof IStackLogos ? ILanguageItems2<T>[ILanguageItemKey2<T>] : never;
+
+// const riri: IObj
+// riri.src // ok
+
+// const test = <T extends keyof IStackLogos>(
+//   languageKey: T,
+//   languageItemKey: ILanguageItemKey2<T>,
+// ) => {
+//   const toto: ILanguageItems2<T> = stackLogos[languageKey].items;
+
+//   const titi: IObj<T> = toto[languageItemKey]; // Impossible d'assigner le type 'ILanguageItems2<T>[ILanguageItemKey2<T>]' au type 'IObj<T>'.
+//   const milou = toto[languageItemKey].src // La propriété 'src' n'existe pas sur le type 'ILanguageItems2<T>[ILanguageItemKey2<T>]'.
+// };
+
+// const toto: ILanguageItems2<"typescript"> = stackLogos.typescript.items;
+
+// const tate: ILanguageItemKey2<"typescript"> = "axios";
+
+// const titi = toto[tate].src; // ok
 
 export default stackLogos;

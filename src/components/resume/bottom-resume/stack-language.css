@@ -1,0 +1,42 @@
+.language-div {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.language-div:first-child {
+  flex: 2;
+}
+
+.technos-div {
+  background-color: light-dark(var(--light-card-color), var(--dark-card-color));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  justify-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.techno-img-container,
+.techno-img-little-container {
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.techno-img-container {
+  width: 120px;
+}
+
+.techno-img-little-container {
+  width: 60px;
+}
