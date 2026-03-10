@@ -4,9 +4,12 @@
 interface IEnDictionary {
   resume_fields: "Resume fields";
 stack: "Stack";
-profession: "Full stack developer";
-research_1: "Looking for an apprenticeship";
-research_2: "(18 months)";
+profession: {
+  items: {
+  "0": "Looking for an internship (6 months)";
+  "1": "as a Full-Stack developer"
+}
+};
 about: {
   title: "About";
   age: " years old";
@@ -18,7 +21,7 @@ social: {
 };
 profile: {
   title: "Profile";
-  description: "For 3 years, I have been learning programming alongside my job. Noticing a lack of progression / fulfillment in my role as a metrologist, I followed a 10-week bootcamp in early 2024 to initiate my career transition."
+  description: "Enjoying reflection and learning, I started getting into programming in late 2022, alongside my professional activity. Eager to make it my career, I completed a bootcamp in early 2024, then continued to develop my skills, first alongside my position in metrology, then full-time, while looking for an internship or apprenticeship."
 };
 soft_skills: {
   title: "Soft skills";
@@ -111,7 +114,7 @@ projects: {
   "2": {
   title: "A TikTok-style interactive feed to discover music clips";
   descriptions: {
-  title: "Android and iOS application (with backend server) that allows to:";
+  title: "Android and iOS application that allows to:";
   items: {
   "0": "Authenticate to access the rest of the application";
   "1": "Select musical genres that interest us";
@@ -132,9 +135,12 @@ python: "Python";
 export const enDictionary: IEnDictionary = {
   resume_fields: 'Resume fields',
   stack: 'Stack',
-  profession: 'Full stack developer',
-  research_1: 'Looking for an apprenticeship',
-  research_2: '(18 months)',
+  profession: {
+    items: {
+      "0": 'Looking for an internship (6 months)',
+      "1": 'as a Full-Stack developer'
+    }
+  },
   about: {
     title: 'About',
     age: ' years old',
@@ -146,7 +152,7 @@ export const enDictionary: IEnDictionary = {
   },
   profile: {
     title: 'Profile',
-    description: 'For 3 years, I have been learning programming alongside my job. Noticing a lack of progression / fulfillment in my role as a metrologist, I followed a 10-week bootcamp in early 2024 to initiate my career transition.'
+    description: 'Enjoying reflection and learning, I started getting into programming in late 2022, alongside my professional activity. Eager to make it my career, I completed a bootcamp in early 2024, then continued to develop my skills, first alongside my position in metrology, then full-time, while looking for an internship or apprenticeship.'
   },
   soft_skills: {
     title: 'Soft skills',
@@ -239,7 +245,7 @@ export const enDictionary: IEnDictionary = {
       "2": {
         title: 'A TikTok-style interactive feed to discover music clips',
         descriptions: {
-          title: 'Android and iOS application (with backend server) that allows to:',
+          title: 'Android and iOS application that allows to:',
           items: {
             "0": 'Authenticate to access the rest of the application',
             "1": 'Select musical genres that interest us',

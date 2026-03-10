@@ -4,9 +4,13 @@
 interface IFrDictionary {
   resume_fields: "Champs du CV";
 stack: "Stack";
-profession: "Développeur full stack";
-research_1: "En recherche d'une alternance";
-research_2: "(18 mois)";
+profession: {
+  items: {
+  "0": "En recherche de stage (6 mois)";
+  "1": "en tant que développeur";
+  "2": "Full-Stack"
+}
+};
 about: {
   title: "À propos";
   age: " ans";
@@ -18,7 +22,7 @@ social: {
 };
 profile: {
   title: "Profil";
-  description: "Depuis 3 ans, j'apprends la programmation en parallèle de mon métier. Constatant un manque de progression / épanouissement dans mon rôle de métrologue, j'ai suivi un bootcamp de 10 semaines début 2024 pour amorcer ma reconversion."
+  description: "Appréciant réfléchir et apprendre, je me suis initié à la programmation fin 2022, en parallèle de mon activité professionnelle. Désireux d'en faire mon métier, j'ai suivi un bootcamp début 2024, puis j'ai continué à me former, d'abord en parallèle de mon poste en métrologie, puis à temps plein, tout en recherchant un stage ou une alternance."
 };
 soft_skills: {
   title: "Savoir-être";
@@ -111,7 +115,7 @@ projects: {
   "2": {
   title: "Un flux interactif façon TikTok pour découvrir des extraits musicaux";
   descriptions: {
-  title: "Application Android et iOS (avec serveur en back) permettant de :";
+  title: "Application Android et iOS permettant de :";
   items: {
   "0": "S'authentifier afin de pouvoir accéder au reste de l'application";
   "1": "Sélectionner les genres musicaux qui nous intéressent";
@@ -132,9 +136,13 @@ python: "Python";
 export const frDictionary: IFrDictionary = {
   resume_fields: 'Champs du CV',
   stack: 'Stack',
-  profession: 'Développeur full stack',
-  research_1: 'En recherche d\'une alternance',
-  research_2: '(18 mois)',
+  profession: {
+    items: {
+      "0": 'En recherche de stage (6 mois)',
+      "1": 'en tant que développeur',
+      "2": 'Full-Stack'
+    }
+  },
   about: {
     title: 'À propos',
     age: ' ans',
@@ -146,7 +154,7 @@ export const frDictionary: IFrDictionary = {
   },
   profile: {
     title: 'Profil',
-    description: 'Depuis 3 ans, j\'apprends la programmation en parallèle de mon métier. Constatant un manque de progression / épanouissement dans mon rôle de métrologue, j\'ai suivi un bootcamp de 10 semaines début 2024 pour amorcer ma reconversion.'
+    description: 'Appréciant réfléchir et apprendre, je me suis initié à la programmation fin 2022, en parallèle de mon activité professionnelle. Désireux d\'en faire mon métier, j\'ai suivi un bootcamp début 2024, puis j\'ai continué à me former, d\'abord en parallèle de mon poste en métrologie, puis à temps plein, tout en recherchant un stage ou une alternance.'
   },
   soft_skills: {
     title: 'Savoir-être',
@@ -239,7 +247,7 @@ export const frDictionary: IFrDictionary = {
       "2": {
         title: 'Un flux interactif façon TikTok pour découvrir des extraits musicaux',
         descriptions: {
-          title: 'Application Android et iOS (avec serveur en back) permettant de :',
+          title: 'Application Android et iOS permettant de :',
           items: {
             "0": 'S\'authentifier afin de pouvoir accéder au reste de l\'application',
             "1": 'Sélectionner les genres musicaux qui nous intéressent',

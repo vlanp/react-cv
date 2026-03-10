@@ -1,9 +1,13 @@
 {
   "resume_fields": "Champs du CV",
   "stack": "Stack",
-  "profession": "Développeur full stack",
-  "research_1": "En recherche d'une alternance",
-  "research_2": "(18 mois)",
+  "profession": {
+    "items": [
+      "En recherche de stage (6 mois)",
+      "en tant que développeur",
+      "Full-Stack"
+    ]
+  },
   "about": {
     "title": "À propos",
     "age": " ans",
@@ -15,7 +19,7 @@
   },
   "profile": {
     "title": "Profil",
-    "description": "Depuis 3 ans, j'apprends la programmation en parallèle de mon métier. Constatant un manque de progression / épanouissement dans mon rôle de métrologue, j'ai suivi un bootcamp de 10 semaines début 2024 pour amorcer ma reconversion."
+    "description": "Appréciant réfléchir et apprendre, je me suis initié à la programmation fin 2022, en parallèle de mon activité professionnelle. Désireux d'en faire mon métier, j'ai suivi un bootcamp début 2024, puis j'ai continué à me former, d'abord en parallèle de mon poste en métrologie, puis à temps plein, tout en recherchant un stage ou une alternance."
   },
   "soft_skills": {
     "title": "Savoir-être",
@@ -96,7 +100,7 @@
       {
         "title": "Un flux interactif façon TikTok pour découvrir des extraits musicaux",
         "descriptions": {
-          "title": "Application Android et iOS (avec serveur en back) permettant de :",
+          "title": "Application Android et iOS permettant de :",
           "items": [
             "S'authentifier afin de pouvoir accéder au reste de l'application",
             "Sélectionner les genres musicaux qui nous intéressent",

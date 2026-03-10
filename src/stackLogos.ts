@@ -15,10 +15,14 @@ import chatgptSrc from "./assets/stackLogos/python/chatgpt.png";
 import customTkinterSrc from "./assets/stackLogos/python/custom-tkinter.png";
 import seleniumSrc from "./assets/stackLogos/python/selenium.png";
 import torSrc from "./assets/stackLogos/python/tor.png";
+import fastApiSrc from "./assets/stackLogos/python/fastapi.png";
+import pydanticSrc from "./assets/stackLogos/python/pydantic.png";
 
 import kotlinSrc from "./assets/stackLogos/kotlin.png";
 import hiltSrc from "./assets/stackLogos/kotlin/hilt.png";
 import osmdroidSrc from "./assets/stackLogos/kotlin/osmdroid.png";
+import kotlinCoroutinesSrc from "./assets/stackLogos/kotlin/kotlin-coroutines.png";
+import kotlinSerializationSrc from "./assets/stackLogos/kotlin/kotlin-serialization.png";
 
 import androidStudioSrc from "./assets/stackLogos/others/android-studio.png";
 import androidSrc from "./assets/stackLogos/others/android.png";
@@ -57,6 +61,8 @@ const stackLogos = {
       customTkinter: { src: customTkinterSrc, size: "medium" },
       selenium: { src: seleniumSrc, size: "medium" },
       tor: { src: torSrc, size: "medium" },
+      fastApi: { src: fastApiSrc, size: "medium" },
+      pydantic: { src: pydanticSrc, size: "medium" },
     },
   },
   kotlin: {
@@ -64,6 +70,8 @@ const stackLogos = {
     items: {
       hilt: { src: hiltSrc, size: "medium" },
       osmdroid: { src: osmdroidSrc, size: "medium" },
+      kotlinCoroutines: { src: kotlinCoroutinesSrc, size: "medium" },
+      kotlinSerialization: { src: kotlinSerializationSrc, size: "medium" },
     },
   },
   other_technos: {
@@ -71,8 +79,8 @@ const stackLogos = {
       androidStudio: { src: androidStudioSrc, size: "medium" },
       android: { src: androidSrc, size: "medium" },
       css3: { src: css3Src, size: "little" },
-      github: { src: githubSrc, size: "medium" },
       html5: { src: html5Src, size: "little" },
+      github: { src: githubSrc, size: "little" },
       mySqlWorkbench: { src: mySqlWorkbenchSrc, size: "medium" },
       netlify: { src: netlifySrc, size: "medium" },
       northflank: { src: northflankSrc, size: "medium" },

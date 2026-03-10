@@ -34,13 +34,11 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
           Valentin <b>GUILLAUME</b>
         </h1>
         <p className="normal-size-text normal-color-text">
-          {dictionary.profession}
-        </p>
-
-        <p className="small-size-text normal-color-text">
-          <span>{dictionary.research_1}</span>
-          <br />
-          <span>{dictionary.research_2}</span>
+          {Object.values(dictionary.profession.items).map((item, index) => (
+            <span style={{ display: "block" }} key={index}>
+              {item}
+            </span>
+          ))}
         </p>
       </div>
       <div className="body-div">
