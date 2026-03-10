@@ -9,4 +9,5 @@
   width: 100%;
   padding: 20px;
   min-height: 0;
+  flex-wrap: wrap;
 }
