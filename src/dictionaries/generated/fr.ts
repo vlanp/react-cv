@@ -6,7 +6,7 @@ interface IFrDictionary {
 stack: "Stack";
 profession: {
   items: {
-  "0": "En recherche de stage (6 mois)";
+  "0": "En recherche d'un stage (6 mois)";
   "1": "en tant que développeur";
   "2": "Full-Stack"
 }
@@ -138,7 +138,7 @@ export const frDictionary: IFrDictionary = {
   stack: 'Stack',
   profession: {
     items: {
-      "0": 'En recherche de stage (6 mois)',
+      "0": 'En recherche d\'un stage (6 mois)',
       "1": 'en tant que développeur',
       "2": 'Full-Stack'
     }
