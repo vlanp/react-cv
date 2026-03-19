@@ -25,6 +25,7 @@ const StackLanguage = <T extends keyof IStackLogos>({
           <div
             key={languageItemKey}
             className={
+              // @ts-expect-error issue with conditional distributive types
               languageItems[languageItemKey].size === "little"
                 ? "techno-img-little-container"
                 : "techno-img-container"
@@ -32,15 +33,18 @@ const StackLanguage = <T extends keyof IStackLogos>({
           >
             <img
               width={
+                // @ts-expect-error issue with conditional distributive types
                 languageItems[languageItemKey].size === "little"
                   ? undefined
                   : "100%"
               }
               height={
+                // @ts-expect-error issue with conditional distributive types
                 languageItems[languageItemKey].size === "little"
                   ? "100%"
                   : undefined
               }
+              // @ts-expect-error issue with conditional distributive types
               src={languageItems[languageItemKey].src}
             />
           </div>
