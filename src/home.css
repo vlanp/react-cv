@@ -66,6 +66,10 @@ h3 {
   color: light-dark(var(--light-text-color), var(--dark-text-color));
 }
 
+.mid-color-text {
+  color: light-dark(var(--light-text-color-mid), var(--dark-text-color-mid));
+}
+
 .light-color-text {
   color: light-dark(
     var(--light-text-color-light),
@@ -85,6 +89,9 @@ h3 {
 .list {
   padding: 0 1rem;
   list-style: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .icon {

@@ -2,7 +2,6 @@ import {
   FaLocationDot,
   FaEnvelope,
   FaPhone,
-  FaGithub,
   FaLinkedin,
   FaHourglassStart,
   FaLink,
@@ -14,6 +13,7 @@ import { getAge } from "../../utils";
 import { useMemo } from "react";
 import useCategoryItemsContext from "../../hooks/useCategoryItemsContext";
 import type { ICategoryItemId } from "../../zustand/createCategoryItemsStore";
+import me from "../../assets/me.jpg";
 
 const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
   const age = useMemo(() => getAge("1997-12-30"), []);
@@ -33,6 +33,13 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
         <h1>
           Valentin <b>GUILLAUME</b>
         </h1>
+        <div
+          className="profile-img"
+          style={{ backgroundImage: `url(${me})` }}
+        />
+        <p className="normal-size-text normal-color-text">
+          {dictionary.experience}
+        </p>
         <p className="normal-size-text normal-color-text">
           {Object.values(dictionary.profession.items).map((item, index) => (
             <span style={{ display: "block" }} key={index}>
@@ -74,14 +81,6 @@ const LeftResume = ({ dictionary }: { dictionary: IDictionary }) => {
         </div>
         <div className="social-div" id="social">
           <h2>{dictionary.social.title}</h2>
-          <a
-            href="https://github.com/vlanp"
-            target="_blank"
-            className="small-size-text light-color-text text-with-icon hover"
-          >
-            <FaGithub className="icon" />
-            @vlanp
-          </a>
           <a
             href="https://linkedin.com/in/valentin-guillaume-b3b9742ab"
             target="_blank"

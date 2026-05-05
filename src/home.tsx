@@ -19,8 +19,7 @@ import {
   type ICategoryKey,
 } from "./zustand/createCategoryItemsStore";
 import Resume from "./components/resume";
-import type { ICategoryItemPanel, ILanguageItemPanel } from "./types/IPanels";
-import stackLogos, { type ILanguageItemKey } from "./stackLogos";
+import type { ICategoryItemPanel } from "./types/IPanels";
 
 /* TODO : Resolve issue with links in PDF, which are in the wrong place.
 see : https://github.com/eKoopmans/html2pdf.js/issues/725
@@ -64,22 +63,6 @@ function Home({ lang }: { lang: ILang }) {
     }),
   };
 
-  const languageItemPanel: ILanguageItemPanel = {
-    panelTitle: dictionaryDataState.data.stack,
-    languageItemGroups: (
-      Object.keys(stackLogos) as (keyof typeof stackLogos)[]
-    ).map((languageKey) => {
-      const languageItems = (
-        Object.keys(stackLogos[languageKey].items) as ILanguageItemKey[]
-      ).map((itemKey) => ({ languageItemKey: itemKey }));
-      return {
-        languageKey,
-        languageTitle: dictionaryDataState.data[languageKey],
-        languageItems,
-      };
-    }),
-  };
-
   return (
     <main
       className={
@@ -87,10 +70,7 @@ function Home({ lang }: { lang: ILang }) {
         (theme && Object.values(ETheme).includes(theme) ? theme : "")
       }
     >
-      <ItemSelectorPanels
-        categoryItemPanel={categoryItemPanel}
-        languageItemPanel={languageItemPanel}
-      />
+      <ItemSelectorPanels categoryItemPanel={categoryItemPanel} />
       <Resume
         theme={theme}
         lang={lang}

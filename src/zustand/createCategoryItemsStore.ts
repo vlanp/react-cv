@@ -20,7 +20,6 @@ type ICategoryTitle<T extends ICategoryKey> = IDictionary[T]["title"];
 const categoriesKeys = [
   "educations",
   "experiences",
-  "projects",
   "soft_skills",
 ] satisfies ICategoryKey[];
 

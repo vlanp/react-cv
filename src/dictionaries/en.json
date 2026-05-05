@@ -1,10 +1,12 @@
 {
-  "resume_fields": "Resume fields",
+  "resume_fields": "Resume Fields",
   "stack": "Stack",
+  "experience": "7 years of experience in metrology",
   "profession": {
     "items": [
-      "Looking for an internship (6 months)",
-      "as a Full-Stack developer"
+      "Looking for a fixed-term contract",
+      "(4 months) as a technician",
+      "metrologist"
     ]
   },
   "about": {
@@ -18,101 +20,91 @@
   },
   "profile": {
     "title": "Profile",
-    "description": "Enjoying reflection and learning, I started getting into programming in late 2022, alongside my professional activity. Eager to make it my career, I completed a bootcamp in early 2024, then continued to develop my skills, first alongside my position in metrology, then full-time, while looking for an internship or apprenticeship."
+    "description": "Coming from a background in metrology and currently transitioning into software development, I am looking for a 4-month fixed-term contract (beginning of May – end of August 2026) in metrology before starting my new career in September 2026."
   },
   "soft_skills": {
-    "title": "Soft skills",
+    "title": "Soft Skills",
     "items": [
       { "title": "Autonomy" },
       { "title": "Curiosity" },
       { "title": "Team spirit" },
       { "title": "Adaptability" },
       { "title": "Problem-solving skills" },
-      { "title": "Rigor" }
+      { "title": "Thoroughness" }
     ]
   },
   "experiences": {
     "title": "Experiences",
     "items": [
       {
-        "title": "METROLOGY TECHNICIAN",
+        "title": "INTERN - METROLOGIST",
+        "company": "Aptar Pharma - Le Vaudreuil, France",
+        "period": "April 2017 - June 2017",
+        "skills": {
+          "items": [
+            "Characterization of a calibration oven/bath",
+            "Development of new calibration methods for thermometers"
+          ]
+        }
+      },
+      {
+        "title": "FIXED-TERM CONTRACT - METROLOGIST",
+        "company": "Aptar Pharma - Le Vaudreuil, France",
+        "period": "June 2017 - August 2017",
+        "skills": {
+          "items": [
+            "Finalize SQM procedures related to the internship",
+            "Calibrate and verify measuring instruments in the dimensional and temperature fields"
+          ]
+        }
+      },
+      {
+        "title": "APPRENTICE - METROLOGY TECHNICIAN",
+        "company": "ArianeGroup - Vernon, France",
+        "period": "September 2017 - July 2018",
+        "skills": {
+          "items": [
+            "Calibrate thermometers over the temperature range from -40°C to 1400°C",
+            "Compare calibration methods for temperature probes used to monitor the cryogenic stages of Ariane 5, over the range 20 K to 27 K, with the objective of achieving a maximum calibration uncertainty of 0.05°C (k=3)"
+          ]
+        }
+      },
+      {
+        "title": "PERMANENT CONTRACT - METROLOGY TECHNICIAN",
         "company": "Aptar Pharma - Le Vaudreuil, France",
         "period": "October 2018 - March 2025",
         "skills": {
-          "title": "Transferable skills:",
           "items": [
-            "Create VBA macros for various applications",
-            "Connect to datasets and modify them with Power Query",
-            "Create Power BI desktop reports and deploy them on the web service",
-            "Conduct statistical studies (expert in uncertainty calculations)"
+            "Calibrate measuring instruments in-house across various fields (temperature, dimensional, pressure, mass, etc.)",
+            "Assess subcontractor capabilities, negotiate deadlines, and place orders for external calibration of measuring instruments",
+            "Develop calibration methods in compliance with applicable standards",
+            "Develop calibration and measurement uncertainty calculations (following the GUM method from BIPM)",
+            "Qualify cleanrooms (ISO 7 or ISO 8 classes)",
+            "Provide support to user departments in finding technical measurement solutions",
+            "Create Power BI Desktop reports and deploy them on the web service"
           ]
         }
       }
     ]
   },
   "educations": {
-    "title": "Educations",
+    "title": "Education",
     "items": [
       {
-        "title": "DUT Physical Measurements",
-        "school": "IUT of Rouen",
+        "title": "HND in Physical Measurements",
+        "school": "IUT de Rouen",
         "period": "September 2015 - June 2017"
       },
       {
-        "title": "Professional bachelor's degree in metrology",
-        "school": "IUT of Evreux",
+        "title": "Professional Bachelor's Degree in Metrology",
+        "school": "IUT d'Evreux",
         "period": "September 2017 - July 2018"
       },
       {
-        "title": "Web and mobile developer bootcamp",
-        "school": "Le Reacteur - Paris, France (remote)",
+        "title": "Web and Mobile Developer Bootcamp",
+        "school": "Le Reacteur - Paris, France",
         "period": "May 2024 - July 2024 (10 weeks)"
       }
     ]
-  },
-  "projects": {
-    "title": "Personal projects",
-    "items": [
-      {
-        "title": "Interactive map powered by OpenStreetMap data",
-        "descriptions": {
-          "title": "Android application that allows to:",
-          "items": [
-            "Reposition on a map based on the indicated location",
-            "Display points of interest around this location on the map",
-            "Click on a point of interest to display its information"
-          ]
-        }
-      },
-      {
-        "title": "Codeur.com scraping",
-        "descriptions": {
-          "title": "Python application for Windows that allows to:",
-          "items": [
-            "Retrieve job offers from Codeur.com",
-            "Use AI to write proposals",
-            "Send proposals via Codeur.com",
-            "Store all this information in a database"
-          ]
-        }
-      },
-      {
-        "title": "A TikTok-style interactive feed to discover music clips",
-        "descriptions": {
-          "title": "Android and iOS application that allows to:",
-          "items": [
-            "Authenticate to access the rest of the application",
-            "Select musical genres that interest us",
-            "Scroll to listen to random music clips",
-            "Swipe to save as favorites or delete the clip",
-            "Explore favorites to listen to full songs"
-          ]
-        }
-      }
-    ]
-  },
-  "other_technos": "Other technos",
-  "typescript": "TypeScript",
-  "kotlin": "Kotlin",
-  "python": "Python"
+  }
 }

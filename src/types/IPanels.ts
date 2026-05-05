@@ -1,5 +1,3 @@
-import type { IDictionary } from "../dictionaries/generated";
-import type { ILanguageItemKey, IStackLogos } from "../stackLogos";
 import type {
   ICategoryItemId,
   ICategoryItemTitle,
@@ -23,29 +21,6 @@ interface ICategoryItemPanel {
   categoryItemGroups: ICategoryItemGroup<ICategoryKey>[];
 }
 
-interface ILanguageItem<T extends keyof IStackLogos> {
-  languageItemKey: ILanguageItemKey<T>;
-}
+type IPanels = ICategoryItemPanel;
 
-interface ILanguageItemGroup<T extends keyof IStackLogos> {
-  languageKey: T;
-  languageTitle: IDictionary[T];
-  languageItems: ILanguageItem<T>[];
-}
-
-interface ILanguageItemPanel {
-  panelTitle: string;
-  languageItemGroups: ILanguageItemGroup<keyof IStackLogos>[];
-}
-
-type IPanels = ILanguageItemPanel | ICategoryItemPanel;
-
-export type {
-  ICategoryItemGroup,
-  ICategoryItem,
-  ILanguageItemGroup,
-  ILanguageItem,
-  ICategoryItemPanel,
-  ILanguageItemPanel,
-  IPanels,
-};
+export type { ICategoryItemGroup, ICategoryItem, ICategoryItemPanel, IPanels };

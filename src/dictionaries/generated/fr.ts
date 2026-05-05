@@ -4,11 +4,12 @@
 interface IFrDictionary {
   resume_fields: "Champs du CV";
 stack: "Stack";
+experience: "7 ans d'expérience en métrologie";
 profession: {
   items: {
-  "0": "En recherche d'un stage (6 mois)";
-  "1": "en tant que développeur";
-  "2": "Full-Stack"
+  "0": "En recherche d'un CDD (4 mois)";
+  "1": "en tant que technicien";
+  "2": "métrologue"
 }
 };
 about: {
@@ -22,7 +23,7 @@ social: {
 };
 profile: {
   title: "Profil";
-  description: "Appréciant réfléchir et apprendre, je me suis initié à la programmation fin 2022, en parallèle de mon activité professionnelle. Désireux d'en faire mon métier, j'ai suivi un bootcamp début 2024, puis j'ai continué à me former, d'abord en parallèle de mon poste en métrologie, puis à temps plein, tout en recherchant un stage ou une alternance."
+  description: "Issu d'un parcours en métrologie et en cours de reconversion vers le développement informatique, je recherche un CDD de 4 mois (début mai – fin août 2026) en métrologie avant de débuter ma nouvelle carrière en septembre 2026."
 };
 soft_skills: {
   title: "Savoir-être";
@@ -37,7 +38,7 @@ soft_skills: {
   title: "Esprit d'équipe"
 };
   "3": {
-  title: "Adaptabilité"
+  title: "Capacités d'adaptation"
 };
   "4": {
   title: "Capacité de résolution de problèmes"
@@ -51,16 +52,51 @@ experiences: {
   title: "Experiences";
   items: {
   "0": {
-  title: "TECHNICIEN MÉTROLOGUE";
+  title: "STAGIAIRE - MÉTROLOGUE";
+  company: "Aptar Pharma - Le Vaudreuil, France";
+  period: "Avril 2017 - Juin 2017";
+  skills: {
+  items: {
+  "0": "Caractérisation d’un four/bain d’étalonnage";
+  "1": "Développement des nouvelles méthodes d'étalonnage des thermomètres"
+}
+}
+};
+  "1": {
+  title: "CDD - MÉTROLOGUE";
+  company: "Aptar Pharma - Le Vaudreuil, France";
+  period: "Juin 2017 - Août 2017";
+  skills: {
+  items: {
+  "0": "Finaliser les procédures SQM liées au stage";
+  "1": "Étalonner et vérifier des instruments de mesure dans les domaines du dimensionnel et de la température"
+}
+}
+};
+  "2": {
+  title: "APPRENTI - TECHNICIEN MÉTROLOGUE";
+  company: "ArianeGroup - Vernon, France";
+  period: "Septembre 2017 - Juillet 2018";
+  skills: {
+  items: {
+  "0": "Etalonner des thermomètres sur la plage de température de -40 °C à 1400 °C";
+  "1": "Comparer les méthodes d'étalonnage des sondes de température, utilisées pour le suivi des étages cryogéniques d'Ariane 5, sur la plage 20 K à 27 K, avec pour objectif d'avoir une incertitude d'étalonnage maximale de 0,05 °C (k=3)"
+}
+}
+};
+  "3": {
+  title: "CDI - TECHNICIEN MÉTROLOGUE";
   company: "Aptar Pharma - Le Vaudreuil, France";
   period: "Octobre 2018 - Mars 2025";
   skills: {
-  title: "Compétences transposables :";
   items: {
-  "0": "Créer des macros VBA pour des applications diverses";
-  "1": "Se connecter à des jeux de données et les modifier avec Power Query";
-  "2": "Créer des rapports Power BI desktop et les déployer sur le service web";
-  "3": "Faire des études statistiques (référent en calculs d'incertitudes)"
+  "0": "Étalonner des instruments de mesure, en interne, dans des domaines variés (température, dimensionnel, pression, masse...)";
+  "1": "Etudier les compétences des prestataires, négocier les délais, et établir des commandes pour l'étalonnage des instruments de mesure en externe";
+  "2": "Développer des méthodes d'étalonnage en respectant les normes en vigueur";
+  "3": "Développer les calculs d'incertitudes d'étalonnage et d'utilisation des appareils de mesure (suivant la méthode du GUM du BIPM)";
+  "4": "Qualifier les salles blanches (classes ISO 7 ou ISO 8)";
+  "5": "Apporter un soutien aux services utilisateurs dans la recherche de solutions techniques de mesure";
+  "6": "Créer des rapports Power BI desktop et les déployer sur le service web"
 }
 }
 }
@@ -81,66 +117,22 @@ educations: {
 };
   "2": {
   title: "Bootcamp développeur web et mobile";
-  school: "Le Reacteur - Paris, France (en distanciel)";
+  school: "Le Reacteur - Paris, France";
   period: "Mai 2024 - Juillet 2024 (10 semaines)"
 }
 }
 };
-projects: {
-  title: "Projets personnels";
-  items: {
-  "0": {
-  title: "Carte interactive alimentée par les données d'OpenStreetMap";
-  descriptions: {
-  title: "Application Android permettant de :";
-  items: {
-  "0": "Se repositionner sur une carte en fonction du lieu indiqué";
-  "1": "Faire apparaître des points d'intérêts autour de ce lieu sur la carte";
-  "2": "Cliquer sur un point d'intérêt pour faire apparaître ses informations"
-}
-}
-};
-  "1": {
-  title: "Scrapping de Codeur.com";
-  descriptions: {
-  title: "Application python pour Windows permettant de :";
-  items: {
-  "0": "Récupérater les appels d'offres de Codeur.com";
-  "1": "Utiliser l'IA pour rédiger des propositions";
-  "2": "Envoyer les propositions via Codeur.com";
-  "3": "Stocker toutes ces informations dans une base de données"
-}
-}
-};
-  "2": {
-  title: "Un flux interactif façon TikTok pour découvrir des extraits musicaux";
-  descriptions: {
-  title: "Application Android et iOS permettant de :";
-  items: {
-  "0": "S'authentifier afin de pouvoir accéder au reste de l'application";
-  "1": "Sélectionner les genres musicaux qui nous intéressent";
-  "2": "Scroller pour écouter des extraits musicaux au hasard";
-  "3": "Swipez pour enregistrer en favoris ou effacer l'extrait";
-  "4": "Explorez les favoris pour écouter entièrement les musiques"
-}
-}
-}
-}
-};
-other_technos: "Autres technos";
-typescript: "TypeScript";
-kotlin: "Kotlin";
-python: "Python";
 }
 
 export const frDictionary: IFrDictionary = {
   resume_fields: 'Champs du CV',
   stack: 'Stack',
+  experience: '7 ans d\'expérience en métrologie',
   profession: {
     items: {
-      "0": 'En recherche d\'un stage (6 mois)',
-      "1": 'en tant que développeur',
-      "2": 'Full-Stack'
+      "0": 'En recherche d\'un CDD (4 mois)',
+      "1": 'en tant que technicien',
+      "2": 'métrologue'
     }
   },
   about: {
@@ -154,7 +146,7 @@ export const frDictionary: IFrDictionary = {
   },
   profile: {
     title: 'Profil',
-    description: 'Appréciant réfléchir et apprendre, je me suis initié à la programmation fin 2022, en parallèle de mon activité professionnelle. Désireux d\'en faire mon métier, j\'ai suivi un bootcamp début 2024, puis j\'ai continué à me former, d\'abord en parallèle de mon poste en métrologie, puis à temps plein, tout en recherchant un stage ou une alternance.'
+    description: 'Issu d\'un parcours en métrologie et en cours de reconversion vers le développement informatique, je recherche un CDD de 4 mois (début mai – fin août 2026) en métrologie avant de débuter ma nouvelle carrière en septembre 2026.'
   },
   soft_skills: {
     title: 'Savoir-être',
@@ -169,7 +161,7 @@ export const frDictionary: IFrDictionary = {
         title: 'Esprit d\'équipe'
       },
       "3": {
-        title: 'Adaptabilité'
+        title: 'Capacités d\'adaptation'
       },
       "4": {
         title: 'Capacité de résolution de problèmes'
@@ -183,16 +175,51 @@ export const frDictionary: IFrDictionary = {
     title: 'Experiences',
     items: {
       "0": {
-        title: 'TECHNICIEN MÉTROLOGUE',
+        title: 'STAGIAIRE - MÉTROLOGUE',
+        company: 'Aptar Pharma - Le Vaudreuil, France',
+        period: 'Avril 2017 - Juin 2017',
+        skills: {
+          items: {
+            "0": 'Caractérisation d’un four/bain d’étalonnage',
+            "1": 'Développement des nouvelles méthodes d\'étalonnage des thermomètres'
+          }
+        }
+      },
+      "1": {
+        title: 'CDD - MÉTROLOGUE',
+        company: 'Aptar Pharma - Le Vaudreuil, France',
+        period: 'Juin 2017 - Août 2017',
+        skills: {
+          items: {
+            "0": 'Finaliser les procédures SQM liées au stage',
+            "1": 'Étalonner et vérifier des instruments de mesure dans les domaines du dimensionnel et de la température'
+          }
+        }
+      },
+      "2": {
+        title: 'APPRENTI - TECHNICIEN MÉTROLOGUE',
+        company: 'ArianeGroup - Vernon, France',
+        period: 'Septembre 2017 - Juillet 2018',
+        skills: {
+          items: {
+            "0": 'Etalonner des thermomètres sur la plage de température de -40 °C à 1400 °C',
+            "1": 'Comparer les méthodes d\'étalonnage des sondes de température, utilisées pour le suivi des étages cryogéniques d\'Ariane 5, sur la plage 20 K à 27 K, avec pour objectif d\'avoir une incertitude d\'étalonnage maximale de 0,05 °C (k=3)'
+          }
+        }
+      },
+      "3": {
+        title: 'CDI - TECHNICIEN MÉTROLOGUE',
         company: 'Aptar Pharma - Le Vaudreuil, France',
         period: 'Octobre 2018 - Mars 2025',
         skills: {
-          title: 'Compétences transposables :',
           items: {
-            "0": 'Créer des macros VBA pour des applications diverses',
-            "1": 'Se connecter à des jeux de données et les modifier avec Power Query',
-            "2": 'Créer des rapports Power BI desktop et les déployer sur le service web',
-            "3": 'Faire des études statistiques (référent en calculs d\'incertitudes)'
+            "0": 'Étalonner des instruments de mesure, en interne, dans des domaines variés (température, dimensionnel, pression, masse...)',
+            "1": 'Etudier les compétences des prestataires, négocier les délais, et établir des commandes pour l\'étalonnage des instruments de mesure en externe',
+            "2": 'Développer des méthodes d\'étalonnage en respectant les normes en vigueur',
+            "3": 'Développer les calculs d\'incertitudes d\'étalonnage et d\'utilisation des appareils de mesure (suivant la méthode du GUM du BIPM)',
+            "4": 'Qualifier les salles blanches (classes ISO 7 ou ISO 8)',
+            "5": 'Apporter un soutien aux services utilisateurs dans la recherche de solutions techniques de mesure',
+            "6": 'Créer des rapports Power BI desktop et les déployer sur le service web'
           }
         }
       }
@@ -213,56 +240,11 @@ export const frDictionary: IFrDictionary = {
       },
       "2": {
         title: 'Bootcamp développeur web et mobile',
-        school: 'Le Reacteur - Paris, France (en distanciel)',
+        school: 'Le Reacteur - Paris, France',
         period: 'Mai 2024 - Juillet 2024 (10 semaines)'
       }
     }
-  },
-  projects: {
-    title: 'Projets personnels',
-    items: {
-      "0": {
-        title: 'Carte interactive alimentée par les données d\'OpenStreetMap',
-        descriptions: {
-          title: 'Application Android permettant de :',
-          items: {
-            "0": 'Se repositionner sur une carte en fonction du lieu indiqué',
-            "1": 'Faire apparaître des points d\'intérêts autour de ce lieu sur la carte',
-            "2": 'Cliquer sur un point d\'intérêt pour faire apparaître ses informations'
-          }
-        }
-      },
-      "1": {
-        title: 'Scrapping de Codeur.com',
-        descriptions: {
-          title: 'Application python pour Windows permettant de :',
-          items: {
-            "0": 'Récupérater les appels d\'offres de Codeur.com',
-            "1": 'Utiliser l\'IA pour rédiger des propositions',
-            "2": 'Envoyer les propositions via Codeur.com',
-            "3": 'Stocker toutes ces informations dans une base de données'
-          }
-        }
-      },
-      "2": {
-        title: 'Un flux interactif façon TikTok pour découvrir des extraits musicaux',
-        descriptions: {
-          title: 'Application Android et iOS permettant de :',
-          items: {
-            "0": 'S\'authentifier afin de pouvoir accéder au reste de l\'application',
-            "1": 'Sélectionner les genres musicaux qui nous intéressent',
-            "2": 'Scroller pour écouter des extraits musicaux au hasard',
-            "3": 'Swipez pour enregistrer en favoris ou effacer l\'extrait',
-            "4": 'Explorez les favoris pour écouter entièrement les musiques'
-          }
-        }
-      }
-    }
-  },
-  other_technos: 'Autres technos',
-  typescript: 'TypeScript',
-  kotlin: 'Kotlin',
-  python: 'Python'
+  }
 } as const;
 
 export type { IFrDictionary };

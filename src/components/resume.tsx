@@ -1,7 +1,6 @@
 import "./resume.css";
 import { FaDownload } from "react-icons/fa6";
 import { ETheme, type ITheme } from "../types/ITheme";
-import BottomResume from "./resume/bottom-resume";
 import LeftResume from "./resume/left-resume";
 import RightResume from "./resume/right-resume";
 import type { FetchDataSuccess } from "../types/IFetchDataState";
@@ -57,7 +56,7 @@ const Resume = ({
     const currentWidth = areaCV.offsetWidth;
     const opt = {
       margin: 0,
-      filename: `CV-Valentin-GUILLAUME-${lang}-${currentTheme}.pdf`,
+      filename: `Resume-Valentin-GUILLAUME-Metrologist-${lang}-${currentTheme}.pdf`,
       image: { type: "jpeg", quality: 1 },
       enableLinks: false,
       html2canvas: {
@@ -102,7 +101,6 @@ const Resume = ({
         <LeftResume dictionary={dictionaryDataState.data} />
         <RightResume dictionary={dictionaryDataState.data} />
       </div>
-      <BottomResume dictionary={dictionaryDataState.data} />
     </section>
   );
 };

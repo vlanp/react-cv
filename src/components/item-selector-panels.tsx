@@ -3,19 +3,12 @@ import "./item-selector-panels.css";
 import { FaSquareCaretDown } from "react-icons/fa6";
 import { FaSquareCaretUp } from "react-icons/fa6";
 import CategoryItemSelectorGroup from "./item-selector-panel/category-item-selector-group";
-import type {
-  ICategoryItemPanel,
-  ILanguageItemPanel,
-  IPanels,
-} from "../types/IPanels";
-import LanguageItemSelectorGroup from "./item-selector-panel/language-item-selector-group";
+import type { ICategoryItemPanel, IPanels } from "../types/IPanels";
 
 const ItemSelectorPanels = ({
   categoryItemPanel,
-  languageItemPanel,
 }: {
   categoryItemPanel: ICategoryItemPanel;
-  languageItemPanel: ILanguageItemPanel;
 }) => {
   const [show, setShow] = useState<boolean>(false);
   const [panel, setPanel] = useState<IPanels["panelTitle"]>(
@@ -39,9 +32,6 @@ const ItemSelectorPanels = ({
           <option value={categoryItemPanel.panelTitle}>
             {categoryItemPanel.panelTitle}
           </option>
-          <option value={languageItemPanel.panelTitle}>
-            {languageItemPanel.panelTitle}
-          </option>
         </select>
         <div className="item-selector-groups">
           {panel === categoryItemPanel.panelTitle &&
@@ -49,13 +39,6 @@ const ItemSelectorPanels = ({
               <CategoryItemSelectorGroup
                 key={categoryItemGroup.categoryKey}
                 categoryItemGroup={categoryItemGroup}
-              />
-            ))}
-          {panel === languageItemPanel.panelTitle &&
-            languageItemPanel.languageItemGroups.map((languageItemGroup) => (
-              <LanguageItemSelectorGroup
-                key={languageItemGroup.languageKey}
-                languageItemGroup={languageItemGroup}
               />
             ))}
         </div>
