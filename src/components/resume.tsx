@@ -60,7 +60,7 @@ const Resume = ({
       image: { type: "jpeg", quality: 1 },
       enableLinks: false,
       html2canvas: {
-        scale: 2,
+        scale: 1.8,
         useCORS: true,
         width: currentWidth,
         height: currentWidth * (29.7 / 21),
